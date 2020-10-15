@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-$overlayColor: linear-gradient(#dd1818, #333333);
+$overlayColor: linear-gradient(#334d50, #cbcaa5);
 
 @mixin viewportDimensions {
   height: 100vh;
@@ -73,7 +73,6 @@ body {
   flex-direction: column;
   border-right: 1px solid white;
   border-left: 1px solid white;
-  color: white;
   opacity: 0.9;
   font-size: 2em;
   text-transform: uppercase;
@@ -81,10 +80,14 @@ body {
   cursor: pointer;
 }
 
-.overlay-inner p {
+.overlay-inner p{
+  opacity: 1;
   padding-top: 5px;
   margin: 0;
+  color: white;
+  
 }
+
 
 @media only screen and (min-aspect-ratio: 16/9) {
   .container {
