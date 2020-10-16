@@ -1,20 +1,11 @@
-
-
-const box = document.querySelector('.testDiv');
-
+const box = document.querySelector(".testDiv");
 
 window.onload = () => {
-    
-    setTimeout(() => {
-        box.classList.add('changeTestDiv-bottom');
-    }, 1000);
+  box.classList.add("changeTestDiv-bottom");
 
-    setTimeout(() => {
-        box.classList.add('changeTestDiv-leftAndRight');
-    }, 2000);
+  box.classList.add("changeTestDiv-right");
 
-    setTimeout(() => {
-        box.classList.add('changeTestDiv-top');
-    }, 3000);
-    
-}
+  box.classList.add("changeTestDiv-left");
+
+  box.classList.add("changeTestDiv-top");
+};

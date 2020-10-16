@@ -64,8 +64,8 @@ body {
   height: calc(var(--mh, 1vh)*100);
   z-index: 1;
   opacity: 0.8;
-  background: -webkit-gradient(linear, left top, left bottom, from(#334d50), to(#cbcaa5));
-  background: linear-gradient(#334d50, #cbcaa5);
+  background: -webkit-gradient(linear, left top, left bottom, from(#333333), to(#dd1818));
+  background: linear-gradient(#333333, #dd1818);
 }
 
 .overlay-inner {
@@ -172,35 +172,124 @@ body {
 }
 
 .testDiv {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 200px;
-  height: 100px;
   border: none;
+  position: absolute;
 }
 
 .changeTestDiv-bottom {
   border-bottom: 1px solid red;
-  -webkit-transition: ease-in, delay 2s;
-  transition: ease-in, delay 2s;
+  bottom: 30px;
+  -webkit-animation: bottomBorder 2s;
+          animation: bottomBorder 2s;
 }
 
-.changeTestDiv-leftAndRight {
+.changeTestDiv-left {
   border-left: 1px solid red;
+  left: 30px;
+  -webkit-animation: leftBorder 2s;
+          animation: leftBorder 2s;
+}
+
+.changeTestDiv-right {
   border-right: 1px solid red;
-  -webkit-transition: ease-in, delay 2s;
-  transition: ease-in, delay 2s;
+  right: 30px;
+  -webkit-animation: rightBorder 2s;
+          animation: rightBorder 2s;
 }
 
 .changeTestDiv-top {
   border-top: 1px solid red;
-  -webkit-transition: ease-in, delay 2s;
-  transition: ease-in, delay 2s;
+  top: 30px;
+  -webkit-animation: topBorder 2s;
+          animation: topBorder 2s;
+}
+
+@-webkit-keyframes leftBorder {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 30px;
+  }
+}
+
+@keyframes leftBorder {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 30px;
+  }
+}
+
+@-webkit-keyframes rightBorder {
+  from {
+    right: 0px;
+  }
+  to {
+    right: 30px;
+  }
+}
+
+@keyframes rightBorder {
+  from {
+    right: 0px;
+  }
+  to {
+    right: 30px;
+  }
+}
+
+@-webkit-keyframes topBorder {
+  from {
+    top: 0px;
+  }
+  to {
+    top: 30px;
+  }
+}
+
+@keyframes topBorder {
+  from {
+    top: 0px;
+  }
+  to {
+    top: 30px;
+  }
+}
+
+@-webkit-keyframes bottomBorder {
+  from {
+    bottom: 0px;
+  }
+  to {
+    bottom: 30px;
+  }
+}
+
+@keyframes bottomBorder {
+  from {
+    bottom: 0px;
+  }
+  to {
+    bottom: 30px;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

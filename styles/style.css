@@ -64,8 +64,8 @@ body {
   height: calc(var(--mh, 1vh)*100);
   z-index: 1;
   opacity: 0.8;
-  background: -webkit-gradient(linear, left top, left bottom, from(#334d50), to(#cbcaa5));
-  background: linear-gradient(#334d50, #cbcaa5);
+  background: -webkit-gradient(linear, left top, left bottom, from(#333333), to(#dd1818));
+  background: linear-gradient(#333333, #dd1818);
 }
 
 .overlay-inner {
@@ -98,10 +98,6 @@ body {
   padding-top: 5px;
   margin: 0;
   color: white;
-}
-
-a {
-  all: unset;
 }
 
 @media only screen and (min-aspect-ratio: 16 / 9) {

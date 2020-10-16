@@ -1,24 +1,75 @@
-@import './style.scss';
+@import "./style.scss";
 
-.testDiv{
-    @include flex-center;
-    width: 200px;
-    height: 100px;
-    border: none;
+.testDiv {
+  border: none;
+  position: absolute;
 }
 
-.changeTestDiv-bottom{
-    border-bottom: 1px solid red;
-    transition: ease-in, delay 2s;
+.changeTestDiv-bottom {
+  border-bottom: 1px solid red;
+  bottom: 30px;
+  animation: bottomBorder 2s;
 }
 
-.changeTestDiv-leftAndRight{
-    border-left: 1px solid red;
-    border-right: 1px solid red;
-    transition: ease-in, delay 2s;
+.changeTestDiv-left {
+  border-left: 1px solid red;
+  left: 30px;
+  animation: leftBorder 2s;
 }
 
-.changeTestDiv-top{
-    border-top: 1px solid red;
-    transition: ease-in, delay 2s;
+.changeTestDiv-right {
+  border-right: 1px solid red;
+  right: 30px;
+  animation: rightBorder 2s;
+}
+
+.changeTestDiv-top {
+  border-top: 1px solid red;
+  top: 30px;
+  animation: topBorder 2s;
+}
+
+@keyframes leftBorder{
+  from{
+    left: 0px;
+  }
+  to {
+    left: 30px;
+  }
+}
+
+@keyframes rightBorder{
+  from{
+    right: 0px;
+  }
+  to {
+    right: 30px;
+  }
+}
+
+@keyframes topBorder{
+  from{
+    top: 0px;
+  }
+  to {
+    top: 30px;
+  }
+}
+
+@keyframes bottomBorder{
+  from{
+    bottom: 0px;
+  }
+  to {
+    bottom: 30px;
+  }
+}
+
+@keyframes fadeIn{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
