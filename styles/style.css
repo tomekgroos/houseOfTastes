@@ -64,8 +64,8 @@ body {
   height: calc(var(--mh, 1vh)*100);
   z-index: 1;
   opacity: 0.8;
-  background: -webkit-gradient(linear, left top, left bottom, from(#333333), to(#dd1818));
-  background: linear-gradient(#333333, #dd1818);
+  background: -webkit-gradient(linear, left top, left bottom, from(#0F2027), color-stop(#203A43), to(#2C5364));
+  background: linear-gradient(#0F2027, #203A43, #2C5364);
 }
 
 .overlay-inner {
