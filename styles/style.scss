@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+}
+
+$overlayColor: linear-gradient(#0F2027,#203A43,#2C5364);
+
+@mixin viewportDimensions {
+  height: 100vh;
+  width: 100vw;
+  /*line below added because of viewport problem on chrome mobile*/
+  height: calc(var(--mh, 1vh)*100);
+}
+
+@mixin screenDim {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+@mixin mobileDim {
+  height: 100%;
+  width: 100%;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  font-family: Lato;
+  margin: 0 auto;
+  overflow: hidden;
+  line-height: 1.5;
+}
+
+.container {
+  @include viewportDimensions;
+  margin: 0;
+  padding: 0;
+  left: 0;
+}
+
+.background-video {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.media-box {
+  @include flex-center;
+  @include mobileDim;
+}
+
+.media-box video {
+  @include mobileDim;
+  object-fit: cover;
+}
+
+.overlay {
+  @include flex-center;
+  @include viewportDimensions;
+  z-index: 1;
+  opacity: 0.8;
+  background: $overlayColor;
+}
+
+.overlay-inner {
+  @include flex-center;
+  width: 50%;
+  height: 15%;
+  flex-direction: column;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+  opacity: 0.9;
+  font-size: 2em;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+}
+
+.overlay-inner p{
+  opacity: 1;
+  padding-top: 5px;
+  margin: 0;
+  color: white;
+  
+}
+
+
+@media only screen and (min-aspect-ratio: 16/9) {
+  .container {
+    @include screenDim;
+  }
+}
+@media only screen and (max-aspect-ratio: 16/9) {
+  .container {
+    @include screenDim;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  
+
+  .overlay-inner {
+    @include flex-center;
+    width: 60%;
+    height: 10%;
+    font-size: 1em;
+    letter-spacing: 1px;
+  }
+
+  .overlay-inner p {
+    padding: 50px;
+  }
+
+  .media-box video {
+    visibility: hidden;
+  }
+
+  .media-box {
+    height: 100%;
+    background: url("/img/cut_img.png") ;
+    background-size: 100% 100%;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+
+
+  .overlay-inner {
+    @include flex-center;
+    width: 80%;
+    height: 10%;
+    font-size: 1em;
+    letter-spacing: 1px;
+  }
+
+  .overlay-inner p {
+    padding: 10px;
+  }
+
+  .media-box {
+    background: url("/img/cut_img_vert.png");
+    background-size: 100% 100%;
+  }
+
+  .media-box video {
+    visibility: hidden;
+  }
+}

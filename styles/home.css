@@ -1,0 +1,827 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: Lato;
+  margin: 0 auto;
+  overflow: hidden;
+  line-height: 1.5;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  /*line below added because of viewport problem on chrome mobile*/
+  height: calc(var(--mh, 1vh)*100);
+  margin: 0;
+  padding: 0;
+  left: 0;
+}
+
+.background-video {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.media-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.media-box video {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.overlay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  /*line below added because of viewport problem on chrome mobile*/
+  height: calc(var(--mh, 1vh)*100);
+  z-index: 1;
+  opacity: 0.8;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0F2027), color-stop(#203A43), to(#2C5364));
+  background: linear-gradient(#0F2027, #203A43, #2C5364);
+}
+
+.overlay-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+  height: 15%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+  opacity: 0.9;
+  font-size: 2em;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+}
+
+.overlay-inner p {
+  opacity: 1;
+  padding-top: 5px;
+  margin: 0;
+  color: white;
+}
+
+@media only screen and (min-aspect-ratio: 16 / 9) {
+  .container {
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-aspect-ratio: 16 / 9) {
+  .container {
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .overlay-inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 60%;
+    height: 10%;
+    font-size: 1em;
+    letter-spacing: 1px;
+  }
+  .overlay-inner p {
+    padding: 50px;
+  }
+  .media-box video {
+    visibility: hidden;
+  }
+  .media-box {
+    height: 100%;
+    background: url("/img/cut_img.png");
+    background-size: 100% 100%;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .overlay-inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 80%;
+    height: 10%;
+    font-size: 1em;
+    letter-spacing: 1px;
+  }
+  .overlay-inner p {
+    padding: 10px;
+  }
+  .media-box {
+    background: url("/img/cut_img_vert.png");
+    background-size: 100% 100%;
+  }
+  .media-box video {
+    visibility: hidden;
+  }
+}
+
+@font-face {
+  src: url("../mexcellent/mexcellent 3d.ttf");
+  font-family: "mex";
+}
+
+html,
+body {
+  height: 100vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0F2027), color-stop(#203A43), to(#2C5364));
+  background: linear-gradient(#0F2027, #203A43, #2C5364);
+  font-family: "mex";
+}
+
+.innerBoxContainer {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+  height: 85%;
+  top: 10vh;
+  cursor: pointer;
+}
+
+.about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 18vw;
+  height: 15vh;
+  border: 1px dashed white;
+  border-radius: 40%;
+  color: white;
+  letter-spacing: 10px;
+  font-size: 2rem;
+  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+  position: absolute;
+  -webkit-animation: moveAbout 3s;
+          animation: moveAbout 3s;
+}
+
+.about:hover {
+  background-color: white;
+  color: #dc1e1e;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.recipes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 18vw;
+  height: 15vh;
+  border: 1px dashed white;
+  border-radius: 40%;
+  color: white;
+  letter-spacing: 10px;
+  font-size: 2rem;
+  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+  position: absolute;
+  -webkit-animation: moveRecipes 3s;
+          animation: moveRecipes 3s;
+}
+
+.recipes:hover {
+  background-color: white;
+  color: #dc1e1e;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 18vw;
+  height: 15vh;
+  border: 1px dashed white;
+  border-radius: 40%;
+  color: white;
+  letter-spacing: 10px;
+  font-size: 2rem;
+  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+  position: absolute;
+  -webkit-animation: moveGallery 3s;
+          animation: moveGallery 3s;
+}
+
+.gallery:hover {
+  background-color: white;
+  color: #dc1e1e;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.aboutShow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 18vw;
+  height: 15vh;
+  border: 1px dashed white;
+  border-radius: 40%;
+  color: white;
+  letter-spacing: 10px;
+  font-size: 2rem;
+  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+}
+
+.aboutShow:hover {
+  background-color: white;
+  color: #dc1e1e;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.recipesShow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 18vw;
+  height: 15vh;
+  border: 1px dashed white;
+  border-radius: 40%;
+  color: white;
+  letter-spacing: 10px;
+  font-size: 2rem;
+  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.recipesShow:hover {
+  background-color: white;
+  color: #dc1e1e;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.galleryShow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 18vw;
+  height: 15vh;
+  border: 1px dashed white;
+  border-radius: 40%;
+  color: white;
+  letter-spacing: 10px;
+  font-size: 2rem;
+  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+}
+
+.galleryShow:hover {
+  background-color: white;
+  color: #dc1e1e;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.containerShow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  position: absolute;
+  top: 30vh;
+  right: 15vw;
+  bottom: 5vh;
+  left: 15vw;
+  height: 55vh;
+  width: 70vw;
+  -webkit-animation: fadeIn 3s;
+          animation: fadeIn 3s;
+}
+
+.title-text {
+  position: absolute;
+  font-size: 4rem;
+  letter-spacing: 10px;
+  color: white;
+  text-shadow: 1px 1px 8px #dc1e1e;
+  -webkit-animation: moveTitleText 3s;
+          animation: moveTitleText 3s;
+}
+
+.title-textShow {
+  position: absolute;
+  top: -22vh;
+  font-size: 4rem;
+  letter-spacing: 10px;
+  color: white;
+  text-shadow: 1px 1px 8px #dc1e1e;
+}
+
+@-webkit-keyframes moveAbout {
+  from {
+    top: 14vw;
+    left: -10vw;
+  }
+  to {
+    top: 14vw;
+    left: 20vw;
+  }
+}
+
+@keyframes moveAbout {
+  from {
+    top: 14vw;
+    left: -10vw;
+  }
+  to {
+    top: 14vw;
+    left: 20vw;
+  }
+}
+
+@-webkit-keyframes moveGallery {
+  from {
+    top: 14vw;
+    right: -10vw;
+  }
+  to {
+    top: 14vw;
+    right: 20vw;
+  }
+}
+
+@keyframes moveGallery {
+  from {
+    top: 14vw;
+    right: -10vw;
+  }
+  to {
+    top: 14vw;
+    right: 20vw;
+  }
+}
+
+@-webkit-keyframes moveRecipes {
+  from {
+    bottom: -10vw;
+  }
+  to {
+    bottom: 26vh;
+  }
+}
+
+@keyframes moveRecipes {
+  from {
+    bottom: -10vw;
+  }
+  to {
+    bottom: 26vh;
+  }
+}
+
+@-webkit-keyframes moveTitleText {
+  from {
+    top: -10vw;
+    left: 30vw;
+  }
+  to {
+    top: 10vh;
+    left: 30vw;
+  }
+}
+
+@keyframes moveTitleText {
+  from {
+    top: -10vw;
+    left: 30vw;
+  }
+  to {
+    top: 10vh;
+    left: 30vw;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes moveAboutMobile {
+  from {
+    bottom: -10vw;
+    left: 30%;
+  }
+  to {
+    bottom: 47vh;
+    left: 30%;
+  }
+}
+
+@keyframes moveAboutMobile {
+  from {
+    bottom: -10vw;
+    left: 30%;
+  }
+  to {
+    bottom: 47vh;
+    left: 30%;
+  }
+}
+
+@-webkit-keyframes moveRecipesMobile {
+  from {
+    bottom: -10vw;
+    left: 30%;
+  }
+  to {
+    bottom: 30vh;
+    left: 30%;
+  }
+}
+
+@keyframes moveRecipesMobile {
+  from {
+    bottom: -10vw;
+    left: 30%;
+  }
+  to {
+    bottom: 30vh;
+    left: 30%;
+  }
+}
+
+@-webkit-keyframes moveGalleryMobile {
+  from {
+    bottom: -10vw;
+    left: 30%;
+  }
+  to {
+    bottom: 14vh;
+    left: 30%;
+  }
+}
+
+@keyframes moveGalleryMobile {
+  from {
+    bottom: -10vw;
+    left: 30%;
+  }
+  to {
+    bottom: 14vh;
+    left: 30%;
+  }
+}
+
+@-webkit-keyframes moveTitleTextMobile {
+  from {
+    top: -10vw;
+    left: 22vw;
+  }
+  to {
+    top: 10vh;
+    left: 22vw;
+  }
+}
+
+@keyframes moveTitleTextMobile {
+  from {
+    top: -10vw;
+    left: 22vw;
+  }
+  to {
+    top: 10vh;
+    left: 22vw;
+  }
+}
+
+@-webkit-keyframes moveTitleTextMobileHorizontal {
+  from {
+    top: -10vw;
+    left: 0vw;
+  }
+  to {
+    top: -2vh;
+    left: 0vw;
+  }
+}
+
+@keyframes moveTitleTextMobileHorizontal {
+  from {
+    top: -10vw;
+    left: 0vw;
+  }
+  to {
+    top: -2vh;
+    left: 0vw;
+  }
+}
+
+@-webkit-keyframes moveAboutMobileHorizontal {
+  from {
+    top: 30vh;
+    left: -10vw;
+  }
+  to {
+    top: 30vh;
+    left: 16vw;
+  }
+}
+
+@keyframes moveAboutMobileHorizontal {
+  from {
+    top: 30vh;
+    left: -10vw;
+  }
+  to {
+    top: 30vh;
+    left: 16vw;
+  }
+}
+
+@-webkit-keyframes moveRecipesMobileHorizontal {
+  from {
+    bottom: -10vw;
+    left: 37vw;
+  }
+  to {
+    bottom: 16vh;
+    left: 37vw;
+  }
+}
+
+@keyframes moveRecipesMobileHorizontal {
+  from {
+    bottom: -10vw;
+    left: 37vw;
+  }
+  to {
+    bottom: 16vh;
+    left: 37vw;
+  }
+}
+
+@-webkit-keyframes moveGalleryMobileHorizontal {
+  from {
+    top: 30vh;
+    right: -10vw;
+  }
+  to {
+    top: 30vh;
+    right: 16vw;
+  }
+}
+
+@keyframes moveGalleryMobileHorizontal {
+  from {
+    top: 30vh;
+    right: -10vw;
+  }
+  to {
+    top: 30vh;
+    right: 16vw;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .title-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100vw;
+    font-size: 3rem;
+    -webkit-animation: moveTitleTextMobileHorizontal 3s;
+            animation: moveTitleTextMobileHorizontal 3s;
+  }
+  .title-textShow {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100vw;
+    font-size: 3rem;
+  }
+  .about,
+  .aboutShow,
+  .recipes,
+  .recipesShow,
+  .gallery,
+  .galleryShow {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 25vw;
+    height: 20vh;
+    border: 1px dashed white;
+    border-radius: 40%;
+    color: white;
+    letter-spacing: 10px;
+    font-size: 1rem;
+    -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+            box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+  }
+  .about {
+    -webkit-animation: moveAboutMobileHorizontal 3s;
+            animation: moveAboutMobileHorizontal 3s;
+  }
+  .recipes {
+    -webkit-animation: moveRecipesMobileHorizontal 3s;
+            animation: moveRecipesMobileHorizontal 3s;
+  }
+  .gallery {
+    -webkit-animation: moveGalleryMobileHorizontal 3s;
+            animation: moveGalleryMobileHorizontal 3s;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .recipes,
+  .recipesShow {
+    -ms-flex-item-align: normal;
+        -ms-grid-row-align: normal;
+        align-self: normal;
+  }
+  .about,
+  .aboutShow,
+  .recipes,
+  .recipesShow,
+  .gallery,
+  .galleryShow {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 40vw;
+    height: 12vh;
+    border: 1px dashed white;
+    border-radius: 40%;
+    color: white;
+    letter-spacing: 5px;
+    font-size: 1rem;
+    -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+            box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+  }
+  .about {
+    -webkit-animation: moveAboutMobile 3s;
+            animation: moveAboutMobile 3s;
+  }
+  .recipes {
+    -webkit-animation: moveRecipesMobile 3s;
+            animation: moveRecipesMobile 3s;
+  }
+  .gallery {
+    -webkit-animation: moveGalleryMobile 3s;
+            animation: moveGalleryMobile 3s;
+  }
+  .innerBoxContainer {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 100%;
+    height: 85%;
+    top: 10vh;
+    cursor: pointer;
+  }
+  .title-text {
+    width: 60%;
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 1rem;
+    -webkit-animation: moveTitleTextMobile 3s;
+            animation: moveTitleTextMobile 3s;
+  }
+  .title-textShow {
+    width: 60%;
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 1rem;
+  }
+}
