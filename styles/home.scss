@@ -1,7 +1,15 @@
-@import "./style.scss";
+body{
+  overflow: hidden;
+}
+
+@mixin flex-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 @font-face {
-  src: url("../mexcellent/mexcellent 3d.ttf");
+  src: url("../fonts/mexcellent 3d.ttf");
   font-family: "mex";
 }
 
@@ -30,7 +38,7 @@ $wallHeight: 55vh;
 html,
 body {
   height: 100vh;
-  background: $overlayColor;
+  background: linear-gradient(#0F2027,#203A43,#2C5364);
   font-family: "mex";
 }
 
@@ -47,28 +55,34 @@ body {
 .about {
   @include innerBox;
   position: absolute;
+  top: 50%;
+  left:0;
   &:hover {
     @include innerBoxHover;
   }
-  animation: moveAbout 3s;
+  animation: moveAbout 2s;
 }
 
 .recipes {
   @include innerBox;
   position: absolute;
+  bottom: 0;
+  left:40%;
   &:hover {
     @include innerBoxHover;
   }
-  animation: moveRecipes 3s;
+  animation: moveRecipes 2s;
 }
 
 .gallery {
   @include innerBox;
   position: absolute;
+  top:50%;
+  right:0;
   &:hover {
     @include innerBoxHover;
   }
-  animation: moveGallery 3s;
+  animation: moveGallery 2s;
 }
 
 .aboutShow {
@@ -76,6 +90,7 @@ body {
   &:hover {
     @include innerBoxHover;
   }
+  
 }
 
 .recipesShow {
@@ -103,16 +118,18 @@ body {
   left: 15vw;
   height: 55vh;
   width: 70vw;
-  animation: fadeIn 3s;
+  animation: fadeIn 2s;
 }
 
 .title-text {
   position: absolute;
+  top: 0;
+  left:50;
   font-size: 4rem;
   letter-spacing: 10px;
   color: white;
   text-shadow: 1px 1px 8px $borderColor;
-  animation: moveTitleText 3s;
+  animation: moveTitleText 2s;
 }
 
 .title-textShow {
@@ -126,49 +143,41 @@ body {
 
 // desktop animation
 
-$topMove: 14vw;
-$LeftRightMove: 20vw;
-$startPosition: -10vw;
+
 
 @keyframes moveAbout {
   from {
-    top: $topMove;
-    left: $startPosition;
+    transform: translate(-50%,-68%);
   }
   to {
-    top: $topMove;
-    left: $LeftRightMove;
+    transform: translate(95%, -68%);
   }
 }
 
 @keyframes moveGallery {
   from {
-    top: $topMove;
-    right: $startPosition;
+    transform: translate(68%, -50%);
   }
   to {
-    top: $topMove;
-    right: $LeftRightMove;
+    transform: translate(-95%, -68%);
   }
 }
 
 @keyframes moveRecipes {
   from {
-    bottom: $startPosition;
+    transform: translate(5%,0);
   }
   to {
-    bottom: 26vh;
+    transform: translate(5%,-150%);
   }
 }
 
 @keyframes moveTitleText {
   from {
-    top: $startPosition;
-    left: 30vw;
+    transform: translate(81%,0);
   }
   to {
-    top: 10vh;
-    left: 30vw;
+    transform: translate(81%,80%);
   }
 }
 
@@ -183,49 +192,40 @@ $startPosition: -10vw;
 
 // mobile Vertical Animation
 
-$LeftRightMoveMobile: 30%;
-
 @keyframes moveAboutMobile {
   from {
-    bottom: $startPosition;
-    left: $LeftRightMoveMobile;
+    transform: translate(55%, 200%);
   }
   to {
-    bottom: 47vh;
-    left: $LeftRightMoveMobile;
+    transform: translate(55%, -105%);
   }
 }
 
 @keyframes moveRecipesMobile {
   from {
-    bottom: $startPosition;
-    left: $LeftRightMoveMobile;
+    transform: translate(-45%, 250%);
   }
   to {
-    bottom: 30vh;
-    left: $LeftRightMoveMobile;
+    transform: translate(-45%, -140%);
   }
 }
 
 @keyframes moveGalleryMobile {
   from {
-    bottom: $startPosition;
-    left: $LeftRightMoveMobile;
+    transform: translate(-72%, 250%);
   }
   to {
-    bottom: 14vh;
-    left: $LeftRightMoveMobile;
+    transform: translate(-72%, 190%);
   }
+  
 }
 
 @keyframes moveTitleTextMobile {
   from {
-    top: $startPosition;
-    left: 22vw;
+    transform: translate(25%, -250%);
   }
   to {
-    top: 10vh;
-    left: 22vw;
+    transform: translate(25%, 50%);
   }
 }
 
@@ -234,46 +234,38 @@ $LeftRightMoveMobile: 30%;
 
 @keyframes moveTitleTextMobileHorizontal {
   from {
-    top: $startPosition;
-    left: 0vw;
+    transform: translate(-2%, 140%);
   }
   to {
-    top: -2vh;
-    left: 0vw;
+    transform: translate(-2%, 200%);
   }
 }
 
 
 @keyframes moveAboutMobileHorizontal{
   from{
-    top: 30vh;
-    left: $startPosition;
+    transform: translate(0%, -60%);
   }
   to{
-    top:30vh;
-    left: 16vw;
+    transform: translate(50%, -60%);
   }
 }
 
 @keyframes moveRecipesMobileHorizontal{
-  from{
-    bottom: $startPosition;
-    left: 37vw;
+  from {
+    transform: translate(-10%, 0%);
   }
-  to{
-    bottom: 16vh;
-    left: 37vw;
+  to {
+    transform: translate(-10%, -50%);
   }
 }
 
 @keyframes moveGalleryMobileHorizontal{
   from{
-    top: 30vh;
-    right: $startPosition;
+    transform: translate(0%, -66%);
   }
   to{
-    top:30vh;
-    right: 16vw;
+    transform: translate(-55%, -66%);
   }
 }
 
@@ -284,7 +276,7 @@ $LeftRightMoveMobile: 30%;
   border: 1px dashed white;
   border-radius: 40%;
   color: white;
-  letter-spacing: 5px;
+  margin: 15px;
   font-size: 1rem;
   box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
 }
@@ -294,6 +286,7 @@ $LeftRightMoveMobile: 30%;
   width: 25vw;
   height: 20vh;
   border: 1px dashed white;
+  margin: -10px;
   border-radius: 40%;
   color: white;
   letter-spacing: 10px;
@@ -306,13 +299,17 @@ $LeftRightMoveMobile: 30%;
  
   .title-text {
     @include flex-center;
+    margin-top: 35px;
+    margin-left: 10px;
     width: 100vw;
     font-size: 3rem;
-    animation: moveTitleTextMobileHorizontal 3s;
+    animation: moveTitleTextMobileHorizontal 2s;
   }
 
   .title-textShow {
     @include flex-center;
+    margin-top: 40px;
+    margin-left: 10px;
     width: 100vw;
     font-size: 3rem;   
   }
@@ -328,15 +325,15 @@ $LeftRightMoveMobile: 30%;
   }
 
   .about{
-    animation: moveAboutMobileHorizontal 3s;
+    animation: moveAboutMobileHorizontal 2s;
   }
 
   .recipes{
-    animation: moveRecipesMobileHorizontal 3s;
+    animation: moveRecipesMobileHorizontal 2s;
   }
 
   .gallery{
-    animation: moveGalleryMobileHorizontal 3s;
+    animation: moveGalleryMobileHorizontal 2s;
   }
 
 
@@ -360,15 +357,15 @@ $LeftRightMoveMobile: 30%;
   }
 
   .about {
-    animation: moveAboutMobile 3s;
+    animation: moveAboutMobile 2s;
   }
 
   .recipes {
-    animation: moveRecipesMobile 3s;
+    animation: moveRecipesMobile 2s;
   }
 
   .gallery {
-    animation: moveGalleryMobile 3s;
+    animation: moveGalleryMobile 2s;
   }
 
   .innerBoxContainer {
@@ -382,13 +379,17 @@ $LeftRightMoveMobile: 30%;
   .title-text {
     width: 60%;
     font-size: 2rem;
+    margin-left: 20px;
+    margin-top: 10px;
     text-align: center;
     letter-spacing: 1rem;
-    animation: moveTitleTextMobile 3s;
+    animation: moveTitleTextMobile 2s;
   }
 
   .title-textShow {
     width: 60%;
+    margin-left: 20px;
+    margin-top: 10px;
     font-size: 2rem;
     text-align: center;
     letter-spacing: 1rem;
