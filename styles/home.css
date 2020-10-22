@@ -1,17 +1,24 @@
 body {
+  margin: 0 auto;
+  height: 100vh;
+  background: url("../img/spices.jpg");
+  background-size: cover;
+  background-position: 100% 30%;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-family: "mex";
   overflow: hidden;
+}
+
+.overlayHome {
+  height: 100vh;
+  margin: 0 auto;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0F2027), color-stop(#203A43), to(#2C5364));
+  background: linear-gradient(#0F2027, #203A43, #2C5364);
+  opacity: 0.8;
 }
 
 @font-face {
   src: url("../fonts/mexcellent 3d.ttf");
-  font-family: "mex";
-}
-
-html,
-body {
-  height: 100vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(#0F2027), color-stop(#203A43), to(#2C5364));
-  background: linear-gradient(#0F2027, #203A43, #2C5364);
   font-family: "mex";
 }
 
@@ -40,13 +47,16 @@ body {
           justify-content: center;
   width: 18vw;
   height: 15vh;
-  border: 1px dashed white;
-  border-radius: 40%;
+  text-shadow: 1px 1px 2px #dc1e1e;
+  border-radius: 30%;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+          clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   color: white;
+  background: rgba(255, 255, 255, 0.3);
   letter-spacing: 10px;
-  font-size: 2rem;
-  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
-          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+  font-size: 1.75rem;
+  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
+          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
   position: absolute;
   top: 50%;
   left: 0;
@@ -73,13 +83,16 @@ body {
           justify-content: center;
   width: 18vw;
   height: 15vh;
-  border: 1px dashed white;
-  border-radius: 40%;
+  text-shadow: 1px 1px 2px #dc1e1e;
+  border-radius: 30%;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+          clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   color: white;
+  background: rgba(255, 255, 255, 0.3);
   letter-spacing: 10px;
-  font-size: 2rem;
-  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
-          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+  font-size: 1.75rem;
+  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
+          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
   position: absolute;
   bottom: 0;
   left: 40%;
@@ -106,13 +119,16 @@ body {
           justify-content: center;
   width: 18vw;
   height: 15vh;
-  border: 1px dashed white;
-  border-radius: 40%;
+  text-shadow: 1px 1px 2px #dc1e1e;
+  border-radius: 30%;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+          clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   color: white;
+  background: rgba(255, 255, 255, 0.3);
   letter-spacing: 10px;
-  font-size: 2rem;
-  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
-          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+  font-size: 1.75rem;
+  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
+          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
   position: absolute;
   top: 50%;
   right: 0;
@@ -139,13 +155,16 @@ body {
           justify-content: center;
   width: 18vw;
   height: 15vh;
-  border: 1px dashed white;
-  border-radius: 40%;
+  text-shadow: 1px 1px 2px #dc1e1e;
+  border-radius: 30%;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+          clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   color: white;
+  background: rgba(255, 255, 255, 0.3);
   letter-spacing: 10px;
-  font-size: 2rem;
-  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
-          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+  font-size: 1.75rem;
+  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
+          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
 }
 
 .aboutShow:hover {
@@ -167,13 +186,16 @@ body {
           justify-content: center;
   width: 18vw;
   height: 15vh;
-  border: 1px dashed white;
-  border-radius: 40%;
+  text-shadow: 1px 1px 2px #dc1e1e;
+  border-radius: 30%;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+          clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   color: white;
+  background: rgba(255, 255, 255, 0.3);
   letter-spacing: 10px;
-  font-size: 2rem;
-  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
-          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+  font-size: 1.75rem;
+  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
+          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
   -ms-flex-item-align: center;
       align-self: center;
 }
@@ -197,13 +219,16 @@ body {
           justify-content: center;
   width: 18vw;
   height: 15vh;
-  border: 1px dashed white;
-  border-radius: 40%;
+  text-shadow: 1px 1px 2px #dc1e1e;
+  border-radius: 30%;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+          clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   color: white;
+  background: rgba(255, 255, 255, 0.3);
   letter-spacing: 10px;
-  font-size: 2rem;
-  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
-          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+  font-size: 1.75rem;
+  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
+          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
 }
 
 .galleryShow:hover {
@@ -583,11 +608,10 @@ body {
             justify-content: center;
     width: 25vw;
     height: 20vh;
-    border: 1px dashed white;
     margin: -10px;
-    border-radius: 40%;
     color: white;
     letter-spacing: 10px;
+    border-radius: 30%;
     font-size: 1rem;
     -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
             box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
@@ -630,9 +654,8 @@ body {
             justify-content: center;
     width: 40vw;
     height: 12vh;
-    border: 1px dashed white;
-    border-radius: 40%;
     color: white;
+    border-radius: 30%;
     margin: 15px;
     font-size: 1rem;
     -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);

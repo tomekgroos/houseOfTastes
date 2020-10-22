@@ -1,6 +1,23 @@
-body{
+  
+
+  
+  body {
+  margin:0 auto;
+  height: 100vh;
+  background: url('../img/spices.jpg');
+  background-size: cover;
+  background-position: 100% 30%;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-family: "mex";
   overflow: hidden;
-}
+  }
+
+  .overlayHome{
+    height: 100vh;
+    margin: 0 auto;
+    background: linear-gradient(#0F2027,#203A43,#2C5364);
+    opacity: 0.8;
+  }
 
 @mixin flex-center{
   display: flex;
@@ -13,34 +30,30 @@ body{
   font-family: "mex";
 }
 
-$borderColor: #dc1e1e;
-$borderThick: 5px;
-$wallHeight: 55vh;
+$innerColor: #dc1e1e;
+
 
 @mixin innerBox {
   @include flex-center;
   width: 18vw;
   height: 15vh;
-  border: 1px dashed white;
-  border-radius: 40%;
+  text-shadow: 1px 1px 2px $innerColor;
+  border-radius: 30%;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   color: white;
+  background: rgba(255, 255, 255, 0.3); 
   letter-spacing: 10px;
-  font-size: 2rem;
-  box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+  font-size:  1.75rem;
+  box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
 }
 
 @mixin innerBoxHover {
   background-color: white;
-  color: $borderColor;
+  color: $innerColor;
   transition: 1s;
 }
 
-html,
-body {
-  height: 100vh;
-  background: linear-gradient(#0F2027,#203A43,#2C5364);
-  font-family: "mex";
-}
+
 
 .innerBoxContainer {
   position: absolute;
@@ -51,6 +64,8 @@ body {
   top: 10vh;
   cursor: pointer;
 }
+
+
 
 .about {
   @include innerBox;
@@ -108,6 +123,8 @@ body {
   }
 }
 
+
+
 .containerShow {
   display: flex;
   justify-content: space-around;
@@ -121,6 +138,8 @@ body {
   animation: fadeIn 2s;
 }
 
+
+
 .title-text {
   position: absolute;
   top: 0;
@@ -128,7 +147,7 @@ body {
   font-size: 4rem;
   letter-spacing: 10px;
   color: white;
-  text-shadow: 1px 1px 8px $borderColor;
+  text-shadow: 1px 1px 8px $innerColor;
   animation: moveTitleText 2s;
 }
 
@@ -138,7 +157,7 @@ body {
   font-size: 4rem;
   letter-spacing: 10px;
   color: white;
-  text-shadow: 1px 1px 8px $borderColor;
+  text-shadow: 1px 1px 8px $innerColor;
 }
 
 // desktop animation
@@ -273,9 +292,8 @@ body {
   @include flex-center;
   width: 40vw;
   height: 12vh;
-  border: 1px dashed white;
-  border-radius: 40%;
   color: white;
+  border-radius: 30%;
   margin: 15px;
   font-size: 1rem;
   box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
@@ -285,11 +303,10 @@ body {
   @include flex-center;
   width: 25vw;
   height: 20vh;
-  border: 1px dashed white;
   margin: -10px;
-  border-radius: 40%;
   color: white;
   letter-spacing: 10px;
+  border-radius: 30%;
   font-size: 1rem;
   box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
 } 
