@@ -8,31 +8,22 @@
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
     <!--defer attribute makes script run after page is loaded-->
+    <script src="./scripts/hot.js" defer></script>
+    <script src="./scripts/home.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
   <body>
-    <div class="overlayHome">
+    <div class="overlayMain">
       <div class="container">
-        <p class="title-text" id="title-text-adjust">HOUSE OF TASTE</p>
+        <a style="text-decoration: none" href="/index.html"><p class="title-text" id="title-text-adjust">HOUSE OF TASTE</p></a>
         <div class="innerBoxContainer">
-          <div class="about"><p>
-            ABOUT
-          </p></div>
-          <div class="recipes" id="recipes-adjust"><p>
-            RECIPES
-          </p></div>
-          <div class="gallery"><p>
-            GALLERY
-          </p></div>
+          <a style="text-decoration: none" href="/about.html"><div class="about"><p>ABOUT</p></div></a>
+          <a style="text-decoration: none" href=""><div class="recipes" id="recipes-adjust"><p>RECIPES</p></div></a>
+          <a style="text-decoration: none" href=""><div class="gallery"><p>GALLERY</p></div></a>
         </div>
       </div>
     </div>
-    <script src="./scripts/hot.js" defer></script>
-    <script src="./scripts/home.js" defer></script>
   </body>
- 
 </html>

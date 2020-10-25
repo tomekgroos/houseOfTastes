@@ -1,19 +1,22 @@
 body {
   margin: 0 auto;
   height: 100vh;
+  width: 100vw;
   background: url("../img/spices.jpg");
   background-size: cover;
   background-position: 100% 30%;
-  background-color: rgba(0, 0, 0, 0.8);
   font-family: "mex";
   overflow: hidden;
+  /*line below added because of viewport problem on chrome mobile*/
+  height: calc(var(--mh, 1vh)*100);
 }
 
-.overlayHome {
-  height: 100vh;
-  margin: 0 auto;
+.overlayMain {
+  height: 100%;
+  width: 100%;
   background: -webkit-gradient(linear, left top, left bottom, from(#0F2027), color-stop(#203A43), to(#2C5364));
   background: linear-gradient(#0F2027, #203A43, #2C5364);
+  background-size: cover;
   opacity: 0.8;
 }
 
@@ -52,7 +55,7 @@ body {
   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
           clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   color: white;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
   letter-spacing: 10px;
   font-size: 1.75rem;
   -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
@@ -88,7 +91,7 @@ body {
   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
           clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   color: white;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
   letter-spacing: 10px;
   font-size: 1.75rem;
   -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
@@ -124,7 +127,7 @@ body {
   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
           clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   color: white;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
   letter-spacing: 10px;
   font-size: 1.75rem;
   -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
@@ -160,7 +163,7 @@ body {
   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
           clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   color: white;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
   letter-spacing: 10px;
   font-size: 1.75rem;
   -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
@@ -191,13 +194,12 @@ body {
   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
           clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   color: white;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
   letter-spacing: 10px;
   font-size: 1.75rem;
   -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
           box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
-  -ms-flex-item-align: center;
-      align-self: center;
+  margin-top: 130px;
 }
 
 .recipesShow:hover {
@@ -224,7 +226,7 @@ body {
   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
           clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   color: white;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
   letter-spacing: 10px;
   font-size: 1.75rem;
   -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
@@ -268,7 +270,7 @@ body {
 }
 
 .title-textShow {
-  position: absolute;
+  position: relative;
   top: -22vh;
   font-size: 4rem;
   letter-spacing: 10px;
@@ -344,23 +346,23 @@ body {
 
 @-webkit-keyframes moveTitleText {
   from {
-    -webkit-transform: translate(81%, 0);
-            transform: translate(81%, 0);
+    -webkit-transform: translate(82%, 0);
+            transform: translate(82%, 0);
   }
   to {
-    -webkit-transform: translate(81%, 80%);
-            transform: translate(81%, 80%);
+    -webkit-transform: translate(82%, 80%);
+            transform: translate(82%, 80%);
   }
 }
 
 @keyframes moveTitleText {
   from {
-    -webkit-transform: translate(81%, 0);
-            transform: translate(81%, 0);
+    -webkit-transform: translate(82%, 0);
+            transform: translate(82%, 0);
   }
   to {
-    -webkit-transform: translate(81%, 80%);
-            transform: translate(81%, 80%);
+    -webkit-transform: translate(82%, 80%);
+            transform: translate(82%, 80%);
   }
 }
 
@@ -588,8 +590,7 @@ body {
             justify-content: center;
     margin-top: 40px;
     margin-left: 10px;
-    width: 100vw;
-    font-size: 3rem;
+    font-size: 2.7rem;
   }
   .about,
   .aboutShow,
@@ -611,10 +612,12 @@ body {
     margin: -10px;
     color: white;
     letter-spacing: 10px;
-    border-radius: 30%;
     font-size: 1rem;
     -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
             box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+  }
+  .recipesShow {
+    margin-right: 5px;
   }
   .about {
     -webkit-animation: moveAboutMobileHorizontal 2s;
@@ -655,7 +658,6 @@ body {
     width: 40vw;
     height: 12vh;
     color: white;
-    border-radius: 30%;
     margin: 15px;
     font-size: 1rem;
     -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
@@ -693,7 +695,7 @@ body {
   }
   .title-textShow {
     width: 60%;
-    margin-left: 20px;
+    margin-left: 60px;
     margin-top: 10px;
     font-size: 2rem;
     text-align: center;

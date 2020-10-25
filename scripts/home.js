@@ -25,7 +25,7 @@
       window.matchMedia("(orientation:landscape)").matches
     ) {
       document.getElementById("title-text-adjust").style.top = "-35vh";
-      document.getElementById("recipes-adjust").style.marginTop = "15vh";
+      document.getElementById("recipes-adjust").style.marginTop = "26vh";
     }
 
     // reload page on orientationchange (mobile)
