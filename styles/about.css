@@ -112,12 +112,33 @@ body {
   left: 46%;
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 996px) {
+  .about-box {
+    top: 5%;
+    height: 90vh;
+  }
   #about-title {
-    font-size: 1rem;
+    font-size: 1.5rem;
+    margin-top: 8%;
   }
   .about-text {
-    font-size: 0.6rem;
+    margin-top: 20%;
+    font-size: 0.8rem;
+  }
+  .back-button {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 668px) {
+  #about-title {
+    font-size: 1rem;
+    margin-top: 12%;
+    width: 100%;
+  }
+  .about-text {
+    margin-top: 15%;
+    font-size: 0.7rem;
   }
   .back-button {
     font-size: 1.5rem;
@@ -125,13 +146,17 @@ body {
 }
 
 @media screen and (max-width: 420px) {
+  .about-box {
+    left: 5%;
+    width: 90vw;
+  }
   #about-title {
-    font-size: 1rem;
-    margin-top: 10%;
+    font-size: 1.2rem;
+    margin-top: 30%;
   }
   .about-text {
-    margin-top: 35%;
-    font-size: 0.7rem;
+    margin-top: 30%;
+    font-size: 0.9rem;
   }
   .about-text p {
     margin-top: 10%;

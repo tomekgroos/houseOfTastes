@@ -384,6 +384,94 @@ body {
   }
 }
 
+@-webkit-keyframes moveAbout996 {
+  from {
+    -webkit-transform: translate(-50%, -68%);
+            transform: translate(-50%, -68%);
+  }
+  to {
+    -webkit-transform: translate(95%, -68%);
+            transform: translate(95%, -68%);
+  }
+}
+
+@keyframes moveAbout996 {
+  from {
+    -webkit-transform: translate(-50%, -68%);
+            transform: translate(-50%, -68%);
+  }
+  to {
+    -webkit-transform: translate(95%, -68%);
+            transform: translate(95%, -68%);
+  }
+}
+
+@-webkit-keyframes moveGallery996 {
+  from {
+    -webkit-transform: translate(68%, -50%);
+            transform: translate(68%, -50%);
+  }
+  to {
+    -webkit-transform: translate(-95%, -68%);
+            transform: translate(-95%, -68%);
+  }
+}
+
+@keyframes moveGallery996 {
+  from {
+    -webkit-transform: translate(68%, -50%);
+            transform: translate(68%, -50%);
+  }
+  to {
+    -webkit-transform: translate(-95%, -68%);
+            transform: translate(-95%, -68%);
+  }
+}
+
+@-webkit-keyframes moveRecipes996 {
+  from {
+    -webkit-transform: translate(5%, 0);
+            transform: translate(5%, 0);
+  }
+  to {
+    -webkit-transform: translate(5%, -70%);
+            transform: translate(5%, -70%);
+  }
+}
+
+@keyframes moveRecipes996 {
+  from {
+    -webkit-transform: translate(5%, 0);
+            transform: translate(5%, 0);
+  }
+  to {
+    -webkit-transform: translate(5%, -70%);
+            transform: translate(5%, -70%);
+  }
+}
+
+@-webkit-keyframes moveTitleText996 {
+  from {
+    -webkit-transform: translate(40%, -80%);
+            transform: translate(40%, -80%);
+  }
+  to {
+    -webkit-transform: translate(40%, 40%);
+            transform: translate(40%, 40%);
+  }
+}
+
+@keyframes moveTitleText996 {
+  from {
+    -webkit-transform: translate(40%, -80%);
+            transform: translate(40%, -80%);
+  }
+  to {
+    -webkit-transform: translate(40%, 40%);
+            transform: translate(40%, 40%);
+  }
+}
+
 @-webkit-keyframes moveAboutMobile {
   from {
     -webkit-transform: translate(55%, 200%);
@@ -478,8 +566,8 @@ body {
             transform: translate(-2%, 140%);
   }
   to {
-    -webkit-transform: translate(-2%, 200%);
-            transform: translate(-2%, 200%);
+    -webkit-transform: translate(-2%, 300%);
+            transform: translate(-2%, 300%);
   }
 }
 
@@ -489,8 +577,8 @@ body {
             transform: translate(-2%, 140%);
   }
   to {
-    -webkit-transform: translate(-2%, 200%);
-            transform: translate(-2%, 200%);
+    -webkit-transform: translate(-2%, 300%);
+            transform: translate(-2%, 300%);
   }
 }
 
@@ -560,7 +648,58 @@ body {
   }
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 996px) {
+  .title-textShow {
+    font-size: 2.5rem;
+    margin-top: 5%;
+  }
+  .title-text {
+    font-size: 2.5rem;
+    -webkit-animation: moveTitleText996 2s;
+            animation: moveTitleText996 2s;
+  }
+  .about,
+  .aboutShow,
+  .recipes,
+  .recipesShow,
+  .gallery,
+  .galleryShow {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 20vw;
+    height: 20vh;
+    margin: -10px;
+    color: white;
+    letter-spacing: 5px;
+    font-size: 1rem;
+    -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+            box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+  }
+  .recipesShow {
+    margin-top: 90px;
+  }
+  .about {
+    -webkit-animation: moveAbout996 2s;
+            animation: moveAbout996 2s;
+  }
+  .recipes {
+    -webkit-animation: moveRecipes996 2s;
+            animation: moveRecipes996 2s;
+  }
+  .gallery {
+    -webkit-animation: moveGallery996 2s;
+            animation: moveGallery996 2s;
+  }
+}
+
+@media screen and (max-width: 668px) {
   .title-text {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -574,7 +713,7 @@ body {
     margin-top: 35px;
     margin-left: 10px;
     width: 100vw;
-    font-size: 3rem;
+    font-size: 2.2rem;
     -webkit-animation: moveTitleTextMobileHorizontal 2s;
             animation: moveTitleTextMobileHorizontal 2s;
   }
@@ -588,9 +727,9 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    margin-top: 40px;
+    margin-top: 50px;
     margin-left: 10px;
-    font-size: 2.7rem;
+    font-size: 2.2rem;
   }
   .about,
   .aboutShow,
@@ -617,6 +756,7 @@ body {
             box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
   }
   .recipesShow {
+    margin-top: 90px;
     margin-right: 5px;
   }
   .about {

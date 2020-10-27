@@ -14,7 +14,7 @@
   height: calc(var(--mh, 1vh)*100);
   }
 
-  
+
   .overlayMain{
     height: 100%;
     width: 100%;
@@ -213,6 +213,46 @@ $innerColor: #dc1e1e;
   }
 }
 
+// under 996 Animation
+
+@keyframes moveAbout996 {
+  from {
+    transform: translate(-50%,-68%);
+  }
+  to {
+    transform: translate(95%, -68%);
+  }
+}
+
+@keyframes moveGallery996 {
+  from {
+    transform: translate(68%, -50%);
+  }
+  to {
+    transform: translate(-95%, -68%);
+  }
+}
+
+@keyframes moveRecipes996 {
+  from {
+    transform: translate(5%,0);
+  }
+  to {
+    transform: translate(5%,-70%);
+  }
+}
+
+@keyframes moveTitleText996 {
+  from {
+    transform: translate(40%,-80%);
+  }
+  to {
+    transform: translate(40%,40%);
+  }
+}
+
+
+
 // mobile Vertical Animation
 
 @keyframes moveAboutMobile {
@@ -260,7 +300,7 @@ $innerColor: #dc1e1e;
     transform: translate(-2%, 140%);
   }
   to {
-    transform: translate(-2%, 200%);
+    transform: translate(-2%, 300%);
   }
 }
 
@@ -302,7 +342,7 @@ $innerColor: #dc1e1e;
   box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
 }
 
- @mixin innerBoxMobile1080 {
+ @mixin innerBoxMobile667 {
   @include flex-center;
   width: 25vw;
   height: 20vh;
@@ -313,7 +353,60 @@ $innerColor: #dc1e1e;
   box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
 } 
 
-@media screen and (max-width: 1080px) {
+@mixin innerBoxMobile996 {
+  @include flex-center;
+  width: 20vw;
+  height: 20vh;
+  margin: -10px;
+  color: white;
+  letter-spacing: 5px;
+  font-size: 1rem;
+  box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+} 
+
+// horizontal mobile media queries 996
+
+@media screen and (max-width: 996px){
+  .title-textShow{
+    font-size: 2.5rem;
+    margin-top: 5%;
+  }
+  
+  .title-text{
+    font-size: 2.5rem;
+    animation: moveTitleText996 2s;
+  }
+
+  .about,
+  .aboutShow,
+  .recipes,
+  .recipesShow,
+  .gallery,
+  .galleryShow {
+    @include innerBoxMobile996;
+  }
+
+  .recipesShow{
+    margin-top: 90px;
+  }
+
+  .about{
+    animation: moveAbout996 2s;
+  }
+
+  .recipes{
+    animation: moveRecipes996 2s;
+  }
+
+  .gallery{
+    animation: moveGallery996 2s;
+  }
+
+}
+
+// horizontal mobile media queries 668
+
+@media screen and (max-width: 668px) {
 
  
   .title-text {
@@ -321,15 +414,15 @@ $innerColor: #dc1e1e;
     margin-top: 35px;
     margin-left: 10px;
     width: 100vw;
-    font-size: 3rem;
+    font-size: 2.2rem;
     animation: moveTitleTextMobileHorizontal 2s;
   }
 
   .title-textShow {
     @include flex-center;
-    margin-top: 40px;
+    margin-top: 50px;
     margin-left: 10px;
-    font-size: 2.7rem; 
+    font-size: 2.2rem; 
   }
 
 
@@ -340,10 +433,11 @@ $innerColor: #dc1e1e;
   .recipesShow,
   .gallery,
   .galleryShow {
-    @include innerBoxMobile1080;
+    @include innerBoxMobile667;
   }
 
   .recipesShow{
+    margin-top: 90px;
     margin-right:5px;
   }
 
@@ -364,7 +458,7 @@ $innerColor: #dc1e1e;
 
 // vertical mobile media queries
 
-@media screen and (max-width: 420px){
+@media screen and (max-width: 420px ){
   .recipes,
   .recipesShow {
     align-self: normal;

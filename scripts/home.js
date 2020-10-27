@@ -4,6 +4,7 @@
     const gallery = document.querySelector(".gallery");
     const title = document.querySelector(".title-text");
 
+
     setTimeout(() => {
       about.classList.remove("about");
       recipes.classList.remove("recipes");
@@ -21,15 +22,19 @@
     // adjusting elements on smaller screens in landscape mode
 
     if (
-      window.innerWidth < 1080 &&
+      window.innerWidth < 768 &&
       window.matchMedia("(orientation:landscape)").matches
     ) {
       document.getElementById("title-text-adjust").style.top = "-35vh";
       document.getElementById("recipes-adjust").style.marginTop = "26vh";
     }
 
+
     // reload page on orientationchange (mobile)
 
     window.onorientationchange = () =>{
         window.location.reload();
     }
+
+ 
+ 

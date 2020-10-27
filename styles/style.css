@@ -114,7 +114,7 @@ body {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 667px) {
   .overlay-inner {
     display: -webkit-box;
     display: -ms-flexbox;
