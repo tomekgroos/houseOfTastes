@@ -1,38 +1,55 @@
-const allItems = ['recipe1', 'recipe2', 'showRecipe'];
+const allItems = ["recipe1", "recipe2"];
 
-const items = document.querySelectorAll(allItems);
+const item1 = document.querySelector(".item1");
+const item2 = document.querySelector(".item2");
+const item3 = document.querySelector(".item3");
+const item4 = document.querySelector(".item4");
+const item5 = document.querySelector(".item5");
+const item6 = document.querySelector(".item6");
 
-const item1 = document.querySelector('.item1');
-const item2 = document.querySelector('.item2');
-const item3 = document.querySelector('.item3');
-const item4 = document.querySelector('.item4');
-const item5 = document.querySelector('.item5');
-const item6 = document.querySelector('.item6');
-const showRecipe = document.querySelector('.showRecipe');
+const recipe1 = document.querySelector(".recipe1");
+const recipe2 = document.querySelector(".recipe2");
+const allWrapper = document.querySelector(".grid-wrapper");
 
-const recipe1 = document.querySelector('.recipe1');
-const recipe2 = document.querySelector('.recipe2');
+/* const removePad = () =>{
+  let showRecipe = document.querySelector('.showRecipe');
+  allWrapper.removeChild(showRecipe);
+} */
 
-console.log(items);
+const removePad = () => {
+  allWrapper.removeChild(allWrapper.lastChild);
+};
+
+const addPad1 = () => {
+  let showRecipeAdd = document.createElement("div");
+  showRecipeAdd.classList.add("showRecipe", "blackBack");
+  allWrapper.appendChild(showRecipeAdd);
+  showRecipeAdd.innerHTML = `<ul>
+<li>one</li>
+<li>two</li>
+<li>three</li>
+</ul>`;
+};
+
+const addPad2 = () => {
+  let showRecipeAdd = document.createElement("div");
+  showRecipeAdd.classList.add("showRecipe", "blackBack");
+  allWrapper.appendChild(showRecipeAdd);
+  showRecipeAdd.innerHTML = `<ul>
+<li>four</li>
+<li>five</li>
+<li>six</li>
+</ul>`;
+};
 
 const switchItem = () => {
-    item1.addEventListener('click', () =>{
-      allItems.forEach(recipe =>{
-        if (showRecipe.classList.contains(recipe)){
-          showRecipe.classList.remove(recipe);
-        }
-      })
-      showRecipe.classList.add('recipe1');
-      recipe1.style.display = 'block';
-    });
+  item1.addEventListener("click", () => {
+    removePad();
+    addPad1();
+  });
 
-    item2.addEventListener('click', () =>{
-      allItems.forEach(recipe =>{
-        if (showRecipe.classList.contains(recipe)){
-          showRecipe.classList.remove(recipe);
-        }
-      })
-      showRecipe.classList.add('recipe2');
-      recipe2.style.display = 'block';
-    });
-}
+  item2.addEventListener("click", () => {
+      removePad();
+      addPad2();
+  });
+};

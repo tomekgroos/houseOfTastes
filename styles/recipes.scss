@@ -59,16 +59,9 @@ $innerColor: #dc1e1e;
   grid-column-end: 5
 }
 
-.recipe1, .recipe2{
-  display: none;
-  position: absolute;
-  left: 50%;
-  top:0;
-  color: black;
-  font-size: 1rem;
-  width: 50%;
-  height: 100%;
-  margin: 10px;
+.blackBack{
+  background-color: black;
+  font-size: 3rem;
 }
 
 
