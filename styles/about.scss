@@ -5,16 +5,12 @@ body {
   background: url("../img/spices.jpg");
   background-size: cover;
   background-position: 100% 30%;
-  font-family: "mex";
+  font-family: "Comfortaa";
   overflow: hidden;
   /*line below added because of viewport problem on chrome mobile*/
   height: calc(var(--mh, 1vh) * 100);
 }
 
-@font-face {
-  src: url("../fonts/mexcellent 3d.ttf");
-  font-family: "mex";
-}
 
 $innerColor: #dc1e1e;
 
@@ -60,12 +56,13 @@ $innerColor: #dc1e1e;
   width: 75%;
   height: 20%;
   position: absolute;
-  top: 10%;
+  top: 15%;
   color: white;
   font-size: 2.5rem;
-  letter-spacing: 5px;
   text-shadow: 1px 1px 8px $innerColor;
   text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .about-text {
@@ -75,7 +72,6 @@ $innerColor: #dc1e1e;
   top: 15%;
   margin-top: 10%;
   color: white;
-  letter-spacing: 5px;
   font-size: 1.3rem;
   text-align: center;
   text-shadow: 1px 1px 8px $innerColor;
@@ -87,11 +83,13 @@ $innerColor: #dc1e1e;
 
 .back-button {
   position: absolute;
-  color: white;
+  background: url('../img/back.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
-  font-size: 3rem;
   top: 85%;
-  left: 46%;
+  left: 47%;
 }
 
 @media screen and (max-width: 996px) {
@@ -112,7 +110,9 @@ $innerColor: #dc1e1e;
   }
 
   .back-button {
-    font-size: 2rem;
+    left: 45%;
+    width: 30px;
+    height: 30px;
   }
 }
 
@@ -126,13 +126,10 @@ $innerColor: #dc1e1e;
   }
 
   .about-text {
-    margin-top: 15%;
+    margin-top: 20%;
     font-size: 0.7rem;
   }
 
-  .back-button {
-    font-size: 1.5rem;
-  }
 }
 
 @media screen and (max-width: 420px) {
@@ -144,12 +141,12 @@ $innerColor: #dc1e1e;
 
   #about-title {
     font-size: 1.2rem;
-    margin-top: 30%;
+    margin-top: 25%;
   }
 
   .about-text {
-    margin-top: 30%;
-    font-size: 0.9rem;
+    margin-top: 35%;
+    font-size: 1.2rem;
   }
 
   .about-text p {
@@ -157,8 +154,7 @@ $innerColor: #dc1e1e;
   }
 
   .back-button {
-    left: 40%;
-    font-size: 1.5rem;
+    left: 45%;
   }
 }
 

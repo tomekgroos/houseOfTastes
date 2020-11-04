@@ -22,7 +22,7 @@ const removePad = () => {
 
 const addPad1 = () => {
   let showRecipeAdd = document.createElement("div");
-  showRecipeAdd.classList.add("showRecipe", "blackBack");
+  showRecipeAdd.classList.add("showRecipe");
   allWrapper.appendChild(showRecipeAdd);
   showRecipeAdd.innerHTML = `<ul>
 <li>one</li>
@@ -35,11 +35,6 @@ const addPad2 = () => {
   let showRecipeAdd = document.createElement("div");
   showRecipeAdd.classList.add("showRecipe", "blackBack");
   allWrapper.appendChild(showRecipeAdd);
-  showRecipeAdd.innerHTML = `<ul>
-<li>four</li>
-<li>five</li>
-<li>six</li>
-</ul>`;
 };
 
 const switchItem = () => {
@@ -53,3 +48,5 @@ const switchItem = () => {
       addPad2();
   });
 };
+
+
