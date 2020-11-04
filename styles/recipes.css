@@ -5,7 +5,7 @@ body {
   background: url("../img/spices.jpg");
   background-size: cover;
   background-position: 100% 30%;
-  font-family: 'Comfortaa';
+  font-family: "Comfortaa";
   overflow: hidden;
   /*line below added because of viewport problem on chrome mobile*/
   height: calc(var(--mh, 1vh) * 100);
@@ -20,34 +20,38 @@ body {
   opacity: 0.9;
 }
 
-.item-img {
-  margin-top: 10%;
-  border-radius: 50%;
+.item-img-box {
   width: 70%;
-  height: 40%;
-  overflow: hidden;
+  height: 45%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-top: 5%;
 }
 
-.item-img img {
+.item-img-box img {
   max-width: 100%;
   max-height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  border-radius: 50%;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
-.item-title {
-  height: 30%;
-  width: 100%;
-  font-size: 1.5em;
+.item-description {
+  height: 35%;
+  width: 95%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 1.2em;
   text-align: center;
-  margin-top: 15%;
 }
 
 .click-info {
-  font-size: 1.2em;
+  top: 0;
+  display: none;
+  position: relative;
   text-align: center;
-  height: 30%;
-  width: 100%;
 }
 
 .grid-wrapper {
@@ -63,20 +67,62 @@ body {
           animation: fadeIn 2s;
 }
 
-.item1, .item2, .item3, .item4, .item5, .item6 {
+.item1,
+.item2,
+.item3,
+.item4,
+.item5,
+.item6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  color: white;
-  background: -webkit-gradient(linear, left top, left bottom, from(#fe8c00), to(#f83600));
-  background: linear-gradient(#fe8c00, #f83600);
-  margin: 10px;
-  cursor: pointer;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+  height: 80%;
+  margin-top: 5%;
+  margin-left: 5%;
   border-radius: 10%;
+  color: white;
+  text-shadow: 1px 1px 8px #dc1e1e;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-box-shadow: 10px 10px 17px -8px rgba(0, 0, 0, 0.5);
+          box-shadow: 10px 10px 17px -8px rgba(0, 0, 0, 0.5);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.item1:hover,
+.item2:hover,
+.item3:hover,
+.item4:hover,
+.item5:hover,
+.item6:hover {
+  height: 95%;
+}
+
+.item1:hover img,
+.item2:hover img,
+.item3:hover img,
+.item4:hover img,
+.item5:hover img,
+.item6:hover img {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+.item1:hover .click-info,
+.item2:hover .click-info,
+.item3:hover .click-info,
+.item4:hover .click-info,
+.item5:hover .click-info,
+.item6:hover .click-info {
+  display: block;
+  -webkit-animation: fadeIn 1s;
+          animation: fadeIn 1s;
 }
 
 .showRecipe {
@@ -87,9 +133,11 @@ body {
   -ms-grid-column-span: 1;
   grid-column: 4 / 5;
   color: red;
-  background-color: white;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
   margin: 10px;
   cursor: pointer;
+  border-radius: 10%;
 }
 
 @-webkit-keyframes fadeIn {
@@ -107,6 +155,24 @@ body {
   }
   to {
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 
