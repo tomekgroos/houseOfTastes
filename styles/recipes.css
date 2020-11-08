@@ -90,6 +90,8 @@ body {
   background: rgba(255, 255, 255, 0.2);
   -webkit-box-shadow: 10px 10px 17px -8px rgba(0, 0, 0, 0.5);
           box-shadow: 10px 10px 17px -8px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid #dc1e1e;
+  border-right: 1px solid #dc1e1e;
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
   cursor: pointer;

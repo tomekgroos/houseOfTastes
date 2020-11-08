@@ -39,6 +39,8 @@ $innerColor: #dc1e1e;
   text-shadow: 1px 1px 8px $innerColor;
   background: rgba(255, 255, 255, 0.2); 
   box-shadow: 10px 10px 17px -8px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid $innerColor;
+  border-right: 1px solid $innerColor;
   transition: 0.5s ease-in-out;
   cursor: pointer;
   &:hover {
