@@ -1,8 +1,17 @@
 const galleryArray = [
-  "../img/gallery/food (1).jpeg",
-  "../img/gallery/food (2).jpeg",
-  "../img/gallery/food (3).jpeg",
-  "../img/gallery/food (4).jpeg",
+  "../img/gallery/food (1).jpg",
+  "../img/gallery/food (2).jpg",
+  "../img/gallery/food (3).jpg",
+  "../img/gallery/food (4).jpg",
+  "../img/gallery/food (5).jpg",
+  "../img/gallery/food (6).jpg",
+  "../img/gallery/food (7).jpg",
+  "../img/gallery/food (8).jpg",
+  "../img/gallery/food (9).jpg",
+  "../img/gallery/food (10).jpg",
+  "../img/gallery/food (11).jpg",
+  "../img/gallery/food (12).jpg"
+  
 ];
 
 let imageBox = document.querySelector(".gallery-image-box");
@@ -22,6 +31,6 @@ let addImage = () => {
   const spansArr = [...spans];
 
   for (let i = 0; i < spansArr.length; i++) {
-    spansArr[i].classList.add(`--image:${i + 1}`);
+    spansArr[i].style = `--image:${i + 1};`;
   }
 };
