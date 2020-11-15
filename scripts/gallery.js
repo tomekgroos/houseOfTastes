@@ -8,10 +8,7 @@ const galleryArray = [
   "../img/gallery/food (7).jpg",
   "../img/gallery/food (8).jpg",
   "../img/gallery/food (9).jpg",
-  "../img/gallery/food (10).jpg",
-  "../img/gallery/food (11).jpg",
-  "../img/gallery/food (12).jpg"
-  
+  "../img/gallery/food (10).jpg"
 ];
 
 let imageBox = document.querySelector(".gallery-image-box");
