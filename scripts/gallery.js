@@ -11,23 +11,23 @@ const galleryArray = [
   "../img/gallery/food (10).jpg"
 ];
 
-let imageBox = document.querySelector(".gallery-image-box");
+let imageContainer = document.querySelector(".gallery-image-container");
 
 let addImage = () => {
   // creating gallery elements
   galleryArray.forEach((item) => {
-    let spanItem = document.createElement("span");
+    let imageBox = document.createElement("span");
     let addImage = document.createElement("img");
-    let catchBox = imageBox.appendChild(spanItem);
+    let catchBox = imageContainer.appendChild(imageBox);
     catchBox.appendChild(addImage);
     // each image source comes from galleryArray
     addImage.src = `${item}`;
   });
   // catching all spans and add classes
-  const spans = document.querySelectorAll("span");
-  const spansArr = [...spans];
+  const imageBoxes = document.querySelectorAll("span");
+  const imageBoxesArr = [...imageBoxes];
 
-  for (let i = 0; i < spansArr.length; i++) {
-    spansArr[i].style = `--image:${i + 1};`;
+  for (let i = 0; i < imageBoxesArr.length; i++) {
+    imageBoxesArr[i].classList.add("image-box");
   }
 };
