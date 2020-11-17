@@ -28,7 +28,9 @@ $innerColor: #dc1e1e;
   background: linear-gradient(#0f2027, #203a43, #2c5364);
   background-size: cover;
   opacity: 0.9;
+  height: 100%;
 }
+  
 
 @mixin rightBottomBorder {
   border-bottom: 1px solid $innerColor;
@@ -39,9 +41,9 @@ $innerColor: #dc1e1e;
   display: flex;
   flex-direction: column;
   width: 90%;
-  height: 80%;
-  margin-top: 5%;
-  margin-left: 5%;
+  height: 75%;
+  margin-top: 15px;
+  margin-left: 10px;
   border-radius: 10%;
   color: white;
   text-shadow: 1px 1px 8px $innerColor;
@@ -51,7 +53,7 @@ $innerColor: #dc1e1e;
   transition: 0.5s ease-in-out;
   cursor: pointer;
   &:hover {
-    height: 95%;
+    height: 90%;
     img {
       transform: scale(1.5);
     }
@@ -111,24 +113,27 @@ $innerColor: #dc1e1e;
 
 .myRecipes {
   @include rightBottomBorder;
+  height: 89%;
   grid-row: 1 / 3;
   grid-column: 4 / 5;
   color: red;
   background: rgba(255, 255, 255, 0.2);
   color: white;
-  margin: 2% 2% 8% 2%;
+  margin: 10px 20px 60px 10px;
   border-radius: 10%;
   text-transform: uppercase;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
   img{
     margin-bottom: 20%;
-    width: 70%;
-    height: 50%;
+    max-width: 70%;
+    max-height: 50%;
     border-radius: 50%;
   }
   p {
+    margin: 30px 0px 30px 0px;
     font-size: 4em;
     text-shadow: 1px 1px 8px $innerColor;
   }
@@ -136,24 +141,27 @@ $innerColor: #dc1e1e;
 
 .showRecipe {
   @include rightBottomBorder;
+  height: 89%;
   grid-row: 1 / 3;
   grid-column: 4 / 5;
   color: red;
   background: rgba(255, 255, 255, 0.2);
   color: white;
-  margin: 2% 2% 8% 2%;
-  cursor: pointer;
+  margin: 10px 10px 10px 10px;
   border-radius: 10%;
   text-transform: uppercase;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  img{
-    margin-bottom: 20%;
-    width: 70%;
-    height: 50%;
-    border-radius: 50%;
+  .img-box{
+    height: 60%;
+    width: 50%;
+    img{
+      max-width: 100%;
+      max-height: 100%;
+    }
   }
+  
   p {
     font-size: 4em;
     text-shadow: 1px 1px 8px $innerColor;
@@ -161,14 +169,14 @@ $innerColor: #dc1e1e;
 }
 
 .back-button {
-  position: absolute;
+  position: fixed;
   background: url("../img/back.png");
   background-size: cover;
   width: 50px;
   height: 50px;
   cursor: pointer;
-  top: 80vh;
-  left: 76vw;
+  top: 80%;
+  right: 22%;
 }
 
 @keyframes fadeIn {
@@ -192,20 +200,20 @@ $innerColor: #dc1e1e;
 
 
 @media screen and (max-width: 1350px) {
+  
   body{
     overflow: visible;
   }
+
+  .overlayMain{
+    height: auto;
+  }
+
   .grid-wrapper {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 2fr;
   }
 
-  .back-button {
-    top: 150vh;
-    left: 80vw;
-    width: 50px;
-    height: 50px;
-  }
 
   .item1,
 .item2,
@@ -276,7 +284,7 @@ $innerColor: #dc1e1e;
   }
 
   .item-img-box{
-    margin-top: 15%;
+    margin-top: 20%;
   }
 
   .showRecipe{
@@ -284,9 +292,5 @@ $innerColor: #dc1e1e;
     grid-column: 1 / 3;
   }
 
-}
-
-@media screen and (max-width: 480px){
-
-}
+  }
 

@@ -25,8 +25,7 @@ const addPad1 = () => {
   showRecipeAdd.classList.add("showRecipe");
   allWrapper.appendChild(showRecipeAdd);
   showRecipeAdd.innerHTML = 
-  `
-<p>Teriyaki Soba</p><img src="./img/teriyakiSoba.png" alt="TeriyakiSoba">`;
+  `<p>Teriyaki Soba</p><div class="img-box"><img src="./img/teriyakiSoba.png" alt="TeriyakiSoba"></div>`;
 };
 
 const addPad2 = () => {
