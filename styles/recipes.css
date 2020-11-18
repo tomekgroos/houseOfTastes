@@ -206,7 +206,7 @@ body {
 }
 
 .showRecipe .img-box {
-  height: 60%;
+  height: 40%;
   width: 50%;
 }
 
@@ -220,15 +220,26 @@ body {
   text-shadow: 1px 1px 8px #dc1e1e;
 }
 
-.back-button {
-  position: fixed;
+.button-box {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.button-box .back-button {
   background: url("../img/back.png");
   background-size: cover;
   width: 50px;
   height: 50px;
   cursor: pointer;
-  top: 80%;
-  right: 22%;
 }
 
 @-webkit-keyframes fadeIn {

@@ -15,9 +15,6 @@ body {
   background-size: cover;
   opacity: 0.8;
   font-family: "Comfortaa";
-  /* overflow: hidden; */
-  /*line below added because of viewport problem on chrome mobile*/
-  height: calc(var(--mh, 1vh) * 100);
 }
 
 
@@ -26,7 +23,8 @@ $innerColor: #dc1e1e;
 
 
 .gallery-image-container {
-  column-count: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   padding: 20px;
   margin-top: 20px;
 }
@@ -36,7 +34,7 @@ $innerColor: #dc1e1e;
   display: inline-block;
   img{
     width: 100%;
-    border: 1px dotted $innerColor;
-  border-radius: 10%;
+    border: 1px dotted #fff;
+    
   }
 }

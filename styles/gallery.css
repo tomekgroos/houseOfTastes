@@ -19,14 +19,13 @@ body {
   background-size: cover;
   opacity: 0.8;
   font-family: "Comfortaa";
-  /* overflow: hidden; */
-  /*line below added because of viewport problem on chrome mobile*/
-  height: calc(var(--mh, 1vh) * 100);
 }
 
 .gallery-image-container {
-  -webkit-column-count: 3;
-          column-count: 3;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
   padding: 20px;
   margin-top: 20px;
 }
@@ -38,6 +37,5 @@ body {
 
 .image-box img {
   width: 100%;
-  border: 1px dotted #dc1e1e;
-  border-radius: 10%;
+  border: 1px dotted #fff;
 }

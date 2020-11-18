@@ -14,7 +14,7 @@ const allWrapper = document.querySelector(".grid-wrapper");
   allWrapper.removeChild(showRecipe);
 } */
 
-
+const backButton = `<div class="button-box"><a href="./home.html"><div class="back-button"></div></a></div>`;
 
 const removePad = () => {
   allWrapper.removeChild(allWrapper.lastChild);
@@ -25,7 +25,8 @@ const addPad1 = () => {
   showRecipeAdd.classList.add("showRecipe");
   allWrapper.appendChild(showRecipeAdd);
   showRecipeAdd.innerHTML = 
-  `<p>Teriyaki Soba</p><div class="img-box"><img src="./img/teriyakiSoba.png" alt="TeriyakiSoba"></div>`;
+  `<p>Teriyaki Soba</p><div class="img-box"><img src="./img/teriyakiSoba.png" alt="TeriyakiSoba"></div>
+  ${backButton}`;
 };
 
 const addPad2 = () => {
@@ -47,4 +48,3 @@ const switchItem = () => {
 };
 
 
-console.log(allWrapper.lastChild);
