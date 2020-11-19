@@ -37,7 +37,6 @@ let addImage = () => {
   // add class and id for each image box
   for (let i = 0; i < imageBoxesArr.length; i++) {
     imageBoxesArr[i].classList.add("image-box");
-    let imageId = (imageBoxesArr[i].id = `${i + 1}`);
-    imageBoxesArr[i].setAttribute("href", `#${imageId}`);
+    let imageId = imageBoxesArr[i].setAttribute("id", `image${i+1}`);
   }
 };
