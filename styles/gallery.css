@@ -5,10 +5,9 @@
 
 body {
   margin: 20px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#0f2027), color-stop(#203a43), to(#2c5364));
-  background: linear-gradient(#0f2027, #203a43, #2c5364);
-  background-size: cover;
-  opacity: 0.8;
+  background: -webkit-gradient(linear, left top, left bottom, from(#141e30), to(#243b55));
+  background: linear-gradient(#141e30, #243b55);
+  background-size: 100%;
   font-family: "Comfortaa";
 }
 
@@ -17,14 +16,17 @@ body {
   display: grid;
   -ms-grid-columns: (1fr)[6];
       grid-template-columns: repeat(6, 1fr);
-  grid-auto-columns: 100px 300px;
+  grid-auto-rows: 12rem;
   grid-gap: 10px;
   -webkit-animation: fadeIn 2s;
           animation: fadeIn 2s;
+  grid-auto-flow: dense;
 }
 
-/* .gallery-image-container {
-} */
+.gallery-image-container {
+  height: 100%;
+}
+
 .image-item {
   width: 100%;
   height: 100%;
@@ -41,8 +43,10 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border-bottom: 1px dashed #dc1e1e;
-  border-right: 1px dashed #dc1e1e;
+  border-bottom: 1px solid #dc1e1e;
+  border-right: 1px solid #dc1e1e;
+  -webkit-box-shadow: 10px 10px 17px -8px rgba(220, 30, 30, 0.5);
+          box-shadow: 10px 10px 17px -8px rgba(220, 30, 30, 0.5);
 }
 
 .image-box img {
@@ -86,6 +90,22 @@ body {
   transition: 0.3s ease-in-out;
 }
 
+.width-col-1 {
+  grid-column: span 1;
+}
+
+.width-col-2 {
+  grid-column: span 2;
+}
+
+.height-row-1 {
+  grid-row: span 1;
+}
+
+.height-row-2 {
+  grid-row: span 2;
+}
+
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
@@ -125,5 +145,38 @@ body {
   }
   100% {
     top: 50%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .container {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .container {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 18rem;
+  }
+  .image-box img:hover {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  .zoom-info {
+    display: none;
+  }
+  .gallery-image-container {
+    grid-row: span 1;
+    grid-column: span 1;
   }
 }
