@@ -2,43 +2,103 @@
   box-sizing: border-box;
 }
 
-@mixin flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 body {
-  @include flex-center;
-  margin: 0 auto;
+  margin: 20px;
   background: linear-gradient(#0f2027, #203a43, #2c5364);
   background-size: cover;
   opacity: 0.8;
   font-family: "Comfortaa";
 }
 
+.container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-columns: 100px 300px;
+  grid-gap: 10px;
+  animation: fadeIn 2s;
+}
 
 $innerColor: #dc1e1e;
 
+@mixin rightBottomBorder {
+  border-bottom: 1px dashed $innerColor;
+  border-right: 1px dashed $innerColor;
+}
 
+/* .gallery-image-container {
+} */
 
-.gallery-image-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 200px 300px;
-  padding: 20px;
-  margin-top: 20px;
- 
+.image-item {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  &:hover{
+    .zoom-info {
+      opacity: 0.8;
+      animation: moveDown 0.3s linear;
+    }
+  }
+}
+
+.image-box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  @include rightBottomBorder;
+
+  img {
+    display: block;
+    object-position: 50% 50%;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    cursor: zoom-in;
+    transition: 0.5s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.zoom-info {
+  width: 100%;
+  height:auto;
+  padding: 5px;
+  text-align: center;
+  opacity: 0;
+  color: white;
+  background-color: $innerColor;
+  text-transform: uppercase;
+  position: absolute;
+  font-size: 1.5em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-shadow: 1px 1px 8px black;
+  pointer-events: none;
+  z-index: 4;
+  transition: 0.3s ease-in-out;
 }
 
 
-
-.image-box{
-  margin: 5px;
-  display: inline-block;
-  img{
-    width: 100%;
-    border: 1px dotted #fff;
-    
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes moveDown {
+  0%{
+    top: 10%;
+  }
+  50%{
+    top: 25%;
+  }
+  100%{
+    top: 50%;
+  }
+  
 }

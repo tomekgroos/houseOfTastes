@@ -5,7 +5,7 @@ const item3 = document.querySelector(".item3");
 const item4 = document.querySelector(".item4");
 const item5 = document.querySelector(".item5");
 const item6 = document.querySelector(".item6");
-
+const clickInfo = document.querySelector(".click-info");
 
 const allWrapper = document.querySelector(".grid-wrapper");
 
@@ -15,6 +15,7 @@ const allWrapper = document.querySelector(".grid-wrapper");
 } */
 
 const backButton = `<div class="button-box"><a href="./home.html"><div class="back-button"></div></a></div>`;
+
 
 const removePad = () => {
   allWrapper.removeChild(allWrapper.lastChild);

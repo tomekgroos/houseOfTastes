@@ -19,24 +19,46 @@ const galleryArray = [
   "../img/gallery/food (18).jpg",
 ];
 
-let imageContainer = document.querySelector(".gallery-image-container");
+let container = document.querySelector(".container");
 
 let addImage = () => {
-  // creating gallery elements
+  
   galleryArray.forEach((item) => {
-    let imageBox = document.createElement("span");
+    // creating gallery elements
+    let imageContainer = document.createElement("div");
+    let imageItem = document.createElement("div");
+    let imageBox = document.createElement("div");
     let addImage = document.createElement("img");
-    let catchBox = imageContainer.appendChild(imageBox);
-    catchBox.appendChild(addImage);
+    let addText = document.createElement("span");
+    // insert gallery elements
+    container.appendChild(imageContainer);
+    imageContainer.appendChild(imageItem);
+    imageItem.appendChild(imageBox);
+    imageItem.appendChild(addText);
+    imageBox.appendChild(addImage);
+    // add specific classes
+    imageContainer.classList.add("gallery-image-container");
+    imageItem.classList.add("image-item");
+    imageBox.classList.add("image-box");
+    addText.classList.add("zoom-info");
+    addText.innerHTML = "click to zoom";
     // each image source comes from galleryArray
     addImage.src = `${item}`;
   });
-  // catching all spans and add classes
-  const imageBoxes = document.querySelectorAll("span");
+  // catching all divs with image-box class and all img elements
+  const imageBoxes = document.querySelectorAll(".image-box");
+  const images = document.querySelectorAll("img");
+  // create an array from them
   const imageBoxesArr = [...imageBoxes];
-  // add class and id for each image box
+  const imagesArr = [...images];
+  // add id attribute for each image box and alt for each image
   for (let i = 0; i < imageBoxesArr.length; i++) {
-    imageBoxesArr[i].classList.add("image-box");
-    let imageId = imageBoxesArr[i].setAttribute("id", `image${i+1}`);
+   imageBoxesArr[i].setAttribute("id", `image${i+1}`);
+   imagesArr[i].setAttribute("alt", `food${i+1}`);
   }
+
 };
+
+/* zadanie na dzis, jest po polnocy :D 
+nadaj losowy grid-column span dla kazdego ze zdjec,
+galeria za kazdym zaladowaniem bedzie inna :)*/
