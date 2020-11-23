@@ -1,0 +1,433 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  height: 100vh;
+  width: 100vw;
+  background: url("../img/spices.jpg");
+  background-size: cover;
+  background-position: 100% 30%;
+  font-family: "Comfortaa";
+  overflow: hidden;
+  /*line below added because of viewport problem on chrome mobile*/
+  height: calc(var(--mh, 1vh) * 100);
+}
+
+.overlayMain {
+  padding-top: 25px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0f2027), color-stop(#203a43), to(#2c5364));
+  background: linear-gradient(#0f2027, #203a43, #2c5364);
+  background-size: cover;
+  opacity: 0.9;
+  height: 100%;
+}
+
+.item-img-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 70%;
+  height: 55%;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin-top: 5%;
+}
+
+.item-img-box img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.item-description {
+  height: 20%;
+  width: 95%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.click-info {
+  margin-top: 15%;
+  display: none;
+  position: relative;
+  text-align: center;
+}
+
+.click-info::after {
+  content: "Click to show recipe";
+}
+
+.grid-wrapper {
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 2.5fr;
+      grid-template-columns: 1fr 1fr 1fr 2.5fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  -webkit-animation: fadeIn 2s;
+          animation: fadeIn 2s;
+}
+
+.item1,
+.item2,
+.item3,
+.item4,
+.item5,
+.item6 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+  height: 75%;
+  margin-top: 15px;
+  margin-left: 10px;
+  border-radius: 10%;
+  color: white;
+  text-shadow: 1px 1px 8px #dc1e1e;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-box-shadow: 10px 10px 17px -8px rgba(220, 30, 30, 0.5);
+          box-shadow: 10px 10px 17px -8px rgba(220, 30, 30, 0.5);
+  border-bottom: 1px solid #dc1e1e;
+  border-right: 1px solid #dc1e1e;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.item1:hover,
+.item2:hover,
+.item3:hover,
+.item4:hover,
+.item5:hover,
+.item6:hover {
+  height: 90%;
+}
+
+.item1:hover img,
+.item2:hover img,
+.item3:hover img,
+.item4:hover img,
+.item5:hover img,
+.item6:hover img {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+.item1:hover .click-info,
+.item2:hover .click-info,
+.item3:hover .click-info,
+.item4:hover .click-info,
+.item5:hover .click-info,
+.item6:hover .click-info {
+  display: block;
+  -webkit-animation: fadeIn 1s;
+          animation: fadeIn 1s;
+}
+
+.myRecipes {
+  border-bottom: 1px solid #dc1e1e;
+  border-right: 1px solid #dc1e1e;
+  height: 89%;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1 / 3;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-column: 4 / 5;
+  color: red;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  margin: 10px 20px 60px 10px;
+  border-radius: 10%;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.myRecipes img {
+  margin-bottom: 20%;
+  max-width: 70%;
+  max-height: 50%;
+  border-radius: 50%;
+}
+
+.myRecipes p {
+  margin: 30px 0px 30px 0px;
+  font-size: 4em;
+  text-shadow: 1px 1px 8px #dc1e1e;
+}
+
+.showRecipe {
+  border-bottom: 1px solid #dc1e1e;
+  border-right: 1px solid #dc1e1e;
+  height: 89%;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1 / 3;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-column: 4 / 5;
+  color: red;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  margin: 10px 10px 10px 10px;
+  border-radius: 10%;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.showRecipe .img-box {
+  height: 40%;
+  width: 50%;
+}
+
+.showRecipe .img-box img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.showRecipe p {
+  font-size: 4em;
+  text-shadow: 1px 1px 8px #dc1e1e;
+}
+
+.button-box {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.button-box .back-button {
+  background: url("../img/back.png");
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  body {
+    overflow: visible;
+  }
+  .overlayMain {
+    height: auto;
+  }
+  .grid-wrapper {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 2fr;
+        grid-template-rows: 1fr 1fr 2fr;
+  }
+  .item1 img,
+  .item2 img,
+  .item3 img,
+  .item4 img,
+  .item5 img,
+  .item6 img {
+    max-width: auto;
+    max-height: auto;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .item1 img:hover,
+  .item2 img:hover,
+  .item3 img:hover,
+  .item4 img:hover,
+  .item5 img:hover,
+  .item6 img:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  .item-img-box {
+    margin-top: 10%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .item-description {
+    height: 20%;
+  }
+  .click-info {
+    margin-top: 5%;
+  }
+  .item3 {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+  }
+  .item4 {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / 3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+  }
+  .item5 {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / 2;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3 / 4;
+  }
+  .item6 {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / 3;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3 / 4;
+  }
+  .showRecipe {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3 / 4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1 / 3;
+  }
+}
+
+@media screen and (max-width: 772px) {
+  .grid-wrapper {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr 2fr;
+        grid-template-rows: 1fr 1fr 1fr 2fr;
+  }
+  .item5 {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3 / 4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+  }
+  .item6 {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3 / 4;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+  }
+  .showRecipe {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    grid-row: 4 / 5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1 / 3;
+  }
+}
+
+@media screen and (max-width: 772px) {
+  body {
+    font-size: 70%;
+  }
+  .item-img-box {
+    margin-top: 5%;
+  }
+}
+
+@media screen and (max-width: 772px) {
+  .item1, .item2, .item3, .item4, .item5, .item6 {
+    height: 90%;
+  }
+  .item1:hover img, .item2:hover img, .item3:hover img, .item4:hover img, .item5:hover img, .item6:hover img {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  .click-info {
+    display: block;
+    font-size: 100%;
+    margin-top: 10%;
+  }
+  .click-info:after {
+    content: "Touch to show recipe";
+  }
+}

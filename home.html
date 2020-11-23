@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 
 <html>
-
-<head> 
+  <head>
     <title>House of Tastes</title>
-    <link href="./styles/home.css" type="text/css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=0" />
-    <script src="./scripts/hot.js"></script>
-    
-</head>
+    <link href="./styles/home.css" type="text/css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!--defer attribute makes script run after page is loaded-->
+    <script src="./scripts/hot.js" defer></script>
+    <script src="./scripts/home.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
 
-<body>
-    <div class="container"> 
-    <p class="title-text" id="title-text-adjust">HOUSE OF TASTE</p>
-    <div class="innerBoxContainer">
-        <div class="about">ABOUT</div>
-        <div class="recipes" id="recipes-adjust">RECIPES</div>
-        <div class="gallery">GALLERY</div>
+  <body>
+    <div class="overlayMain">
+      <div class="container">
+        <a style="text-decoration: none" href="index.html"><p class="title-text" id="title-text-adjust">HOUSE OF TASTE</p></a>
+        <div class="innerBoxContainer">
+          <a style="text-decoration: none" href="about.html"><div class="about"><p>ABOUT</p></div></a>
+          <a style="text-decoration: none" href="recipes.html"><div class="recipes" id="recipes-adjust"><p>RECIPES</p></div></a>
+          <a style="text-decoration: none" href="gallery.html"><div class="gallery"><p>GALLERY</p></div></a>
+        </div>
+      </div>
     </div>
-    </div>
-    
-</body>
-<script src="./scripts/home.js"></script>
+  </body>
 </html>
-

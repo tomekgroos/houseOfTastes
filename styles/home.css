@@ -1,186 +1,27 @@
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
 body {
-  font-family: Lato;
   margin: 0 auto;
+  height: 100vh;
+  width: 100vw;
+  background: url("../img/spices.jpg");
+  background-size: cover;
+  background-position: 100% 30%;
+  font-family: "mex";
   overflow: hidden;
-  line-height: 1.5;
-}
-
-.container {
-  height: 100vh;
-  width: 100vw;
   /*line below added because of viewport problem on chrome mobile*/
   height: calc(var(--mh, 1vh)*100);
-  margin: 0;
-  padding: 0;
-  left: 0;
 }
 
-.background-video {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-}
-
-.media-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.overlayMain {
   height: 100%;
   width: 100%;
-}
-
-.media-box video {
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.overlay {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  /*line below added because of viewport problem on chrome mobile*/
-  height: calc(var(--mh, 1vh)*100);
-  z-index: 1;
-  opacity: 0.8;
   background: -webkit-gradient(linear, left top, left bottom, from(#0F2027), color-stop(#203A43), to(#2C5364));
   background: linear-gradient(#0F2027, #203A43, #2C5364);
-}
-
-.overlay-inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 50%;
-  height: 15%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  border-right: 1px solid white;
-  border-left: 1px solid white;
-  opacity: 0.9;
-  font-size: 2em;
-  text-transform: uppercase;
-  text-align: center;
-  cursor: pointer;
-}
-
-.overlay-inner p {
-  opacity: 1;
-  padding-top: 5px;
-  margin: 0;
-  color: white;
-}
-
-@media only screen and (min-aspect-ratio: 16 / 9) {
-  .container {
-    max-height: 100%;
-    max-width: 100%;
-  }
-}
-
-@media only screen and (max-aspect-ratio: 16 / 9) {
-  .container {
-    max-height: 100%;
-    max-width: 100%;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .overlay-inner {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    width: 60%;
-    height: 10%;
-    font-size: 1em;
-    letter-spacing: 1px;
-  }
-  .overlay-inner p {
-    padding: 50px;
-  }
-  .media-box video {
-    visibility: hidden;
-  }
-  .media-box {
-    height: 100%;
-    background: url("/img/cut_img.png");
-    background-size: 100% 100%;
-  }
-}
-
-@media only screen and (max-width: 420px) {
-  .overlay-inner {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    width: 80%;
-    height: 10%;
-    font-size: 1em;
-    letter-spacing: 1px;
-  }
-  .overlay-inner p {
-    padding: 10px;
-  }
-  .media-box {
-    background: url("/img/cut_img_vert.png");
-    background-size: 100% 100%;
-  }
-  .media-box video {
-    visibility: hidden;
-  }
+  background-size: cover;
+  opacity: 0.8;
 }
 
 @font-face {
-  src: url("../mexcellent/mexcellent 3d.ttf");
-  font-family: "mex";
-}
-
-html,
-body {
-  height: 100vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(#0F2027), color-stop(#203A43), to(#2C5364));
-  background: linear-gradient(#0F2027, #203A43, #2C5364);
+  src: url("../fonts/mexcellent 3d.ttf");
   font-family: "mex";
 }
 
@@ -209,16 +50,21 @@ body {
           justify-content: center;
   width: 18vw;
   height: 15vh;
-  border: 1px dashed white;
-  border-radius: 40%;
+  text-shadow: 1px 1px 2px #dc1e1e;
+  border-radius: 30%;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+          clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   color: white;
+  background: rgba(255, 255, 255, 0.2);
   letter-spacing: 10px;
-  font-size: 2rem;
-  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
-          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+  font-size: 1.75rem;
+  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
+          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
   position: absolute;
-  -webkit-animation: moveAbout 3s;
-          animation: moveAbout 3s;
+  top: 50%;
+  left: 0;
+  -webkit-animation: moveAbout 2s;
+          animation: moveAbout 2s;
 }
 
 .about:hover {
@@ -240,16 +86,21 @@ body {
           justify-content: center;
   width: 18vw;
   height: 15vh;
-  border: 1px dashed white;
-  border-radius: 40%;
+  text-shadow: 1px 1px 2px #dc1e1e;
+  border-radius: 30%;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+          clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   color: white;
+  background: rgba(255, 255, 255, 0.2);
   letter-spacing: 10px;
-  font-size: 2rem;
-  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
-          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+  font-size: 1.75rem;
+  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
+          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
   position: absolute;
-  -webkit-animation: moveRecipes 3s;
-          animation: moveRecipes 3s;
+  bottom: 0;
+  left: 40%;
+  -webkit-animation: moveRecipes 2s;
+          animation: moveRecipes 2s;
 }
 
 .recipes:hover {
@@ -271,16 +122,21 @@ body {
           justify-content: center;
   width: 18vw;
   height: 15vh;
-  border: 1px dashed white;
-  border-radius: 40%;
+  text-shadow: 1px 1px 2px #dc1e1e;
+  border-radius: 30%;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+          clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   color: white;
+  background: rgba(255, 255, 255, 0.2);
   letter-spacing: 10px;
-  font-size: 2rem;
-  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
-          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+  font-size: 1.75rem;
+  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
+          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
   position: absolute;
-  -webkit-animation: moveGallery 3s;
-          animation: moveGallery 3s;
+  top: 50%;
+  right: 0;
+  -webkit-animation: moveGallery 2s;
+          animation: moveGallery 2s;
 }
 
 .gallery:hover {
@@ -302,13 +158,16 @@ body {
           justify-content: center;
   width: 18vw;
   height: 15vh;
-  border: 1px dashed white;
-  border-radius: 40%;
+  text-shadow: 1px 1px 2px #dc1e1e;
+  border-radius: 30%;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+          clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   color: white;
+  background: rgba(255, 255, 255, 0.2);
   letter-spacing: 10px;
-  font-size: 2rem;
-  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
-          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+  font-size: 1.75rem;
+  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
+          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
 }
 
 .aboutShow:hover {
@@ -330,15 +189,17 @@ body {
           justify-content: center;
   width: 18vw;
   height: 15vh;
-  border: 1px dashed white;
-  border-radius: 40%;
+  text-shadow: 1px 1px 2px #dc1e1e;
+  border-radius: 30%;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+          clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   color: white;
+  background: rgba(255, 255, 255, 0.2);
   letter-spacing: 10px;
-  font-size: 2rem;
-  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
-          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
-  -ms-flex-item-align: center;
-      align-self: center;
+  font-size: 1.75rem;
+  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
+          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
+  margin-top: 130px;
 }
 
 .recipesShow:hover {
@@ -360,13 +221,16 @@ body {
           justify-content: center;
   width: 18vw;
   height: 15vh;
-  border: 1px dashed white;
-  border-radius: 40%;
+  text-shadow: 1px 1px 2px #dc1e1e;
+  border-radius: 30%;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+          clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   color: white;
+  background: rgba(255, 255, 255, 0.2);
   letter-spacing: 10px;
-  font-size: 2rem;
-  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
-          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+  font-size: 1.75rem;
+  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
+          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
 }
 
 .galleryShow:hover {
@@ -389,22 +253,24 @@ body {
   left: 15vw;
   height: 55vh;
   width: 70vw;
-  -webkit-animation: fadeIn 3s;
-          animation: fadeIn 3s;
+  -webkit-animation: fadeIn 2s;
+          animation: fadeIn 2s;
 }
 
 .title-text {
   position: absolute;
+  top: 0;
+  left: 50;
   font-size: 4rem;
   letter-spacing: 10px;
   color: white;
   text-shadow: 1px 1px 8px #dc1e1e;
-  -webkit-animation: moveTitleText 3s;
-          animation: moveTitleText 3s;
+  -webkit-animation: moveTitleText 2s;
+          animation: moveTitleText 2s;
 }
 
 .title-textShow {
-  position: absolute;
+  position: relative;
   top: -22vh;
   font-size: 4rem;
   letter-spacing: 10px;
@@ -414,85 +280,89 @@ body {
 
 @-webkit-keyframes moveAbout {
   from {
-    top: 14vw;
-    left: -10vw;
+    -webkit-transform: translate(-50%, -68%);
+            transform: translate(-50%, -68%);
   }
   to {
-    top: 14vw;
-    left: 20vw;
+    -webkit-transform: translate(95%, -68%);
+            transform: translate(95%, -68%);
   }
 }
 
 @keyframes moveAbout {
   from {
-    top: 14vw;
-    left: -10vw;
+    -webkit-transform: translate(-50%, -68%);
+            transform: translate(-50%, -68%);
   }
   to {
-    top: 14vw;
-    left: 20vw;
+    -webkit-transform: translate(95%, -68%);
+            transform: translate(95%, -68%);
   }
 }
 
 @-webkit-keyframes moveGallery {
   from {
-    top: 14vw;
-    right: -10vw;
+    -webkit-transform: translate(68%, -50%);
+            transform: translate(68%, -50%);
   }
   to {
-    top: 14vw;
-    right: 20vw;
+    -webkit-transform: translate(-95%, -68%);
+            transform: translate(-95%, -68%);
   }
 }
 
 @keyframes moveGallery {
   from {
-    top: 14vw;
-    right: -10vw;
+    -webkit-transform: translate(68%, -50%);
+            transform: translate(68%, -50%);
   }
   to {
-    top: 14vw;
-    right: 20vw;
+    -webkit-transform: translate(-95%, -68%);
+            transform: translate(-95%, -68%);
   }
 }
 
 @-webkit-keyframes moveRecipes {
   from {
-    bottom: -10vw;
+    -webkit-transform: translate(5%, 0);
+            transform: translate(5%, 0);
   }
   to {
-    bottom: 26vh;
+    -webkit-transform: translate(5%, -150%);
+            transform: translate(5%, -150%);
   }
 }
 
 @keyframes moveRecipes {
   from {
-    bottom: -10vw;
+    -webkit-transform: translate(5%, 0);
+            transform: translate(5%, 0);
   }
   to {
-    bottom: 26vh;
+    -webkit-transform: translate(5%, -150%);
+            transform: translate(5%, -150%);
   }
 }
 
 @-webkit-keyframes moveTitleText {
   from {
-    top: -10vw;
-    left: 30vw;
+    -webkit-transform: translate(82%, 0);
+            transform: translate(82%, 0);
   }
   to {
-    top: 10vh;
-    left: 30vw;
+    -webkit-transform: translate(82%, 80%);
+            transform: translate(82%, 80%);
   }
 }
 
 @keyframes moveTitleText {
   from {
-    top: -10vw;
-    left: 30vw;
+    -webkit-transform: translate(82%, 0);
+            transform: translate(82%, 0);
   }
   to {
-    top: 10vh;
-    left: 30vw;
+    -webkit-transform: translate(82%, 80%);
+            transform: translate(82%, 80%);
   }
 }
 
@@ -514,183 +384,322 @@ body {
   }
 }
 
-@-webkit-keyframes moveAboutMobile {
+@-webkit-keyframes moveAbout996 {
   from {
-    bottom: -10vw;
-    left: 30%;
+    -webkit-transform: translate(-50%, -68%);
+            transform: translate(-50%, -68%);
   }
   to {
-    bottom: 47vh;
-    left: 30%;
+    -webkit-transform: translate(95%, -68%);
+            transform: translate(95%, -68%);
+  }
+}
+
+@keyframes moveAbout996 {
+  from {
+    -webkit-transform: translate(-50%, -68%);
+            transform: translate(-50%, -68%);
+  }
+  to {
+    -webkit-transform: translate(95%, -68%);
+            transform: translate(95%, -68%);
+  }
+}
+
+@-webkit-keyframes moveGallery996 {
+  from {
+    -webkit-transform: translate(68%, -50%);
+            transform: translate(68%, -50%);
+  }
+  to {
+    -webkit-transform: translate(-95%, -68%);
+            transform: translate(-95%, -68%);
+  }
+}
+
+@keyframes moveGallery996 {
+  from {
+    -webkit-transform: translate(68%, -50%);
+            transform: translate(68%, -50%);
+  }
+  to {
+    -webkit-transform: translate(-95%, -68%);
+            transform: translate(-95%, -68%);
+  }
+}
+
+@-webkit-keyframes moveRecipes996 {
+  from {
+    -webkit-transform: translate(5%, 0);
+            transform: translate(5%, 0);
+  }
+  to {
+    -webkit-transform: translate(5%, -70%);
+            transform: translate(5%, -70%);
+  }
+}
+
+@keyframes moveRecipes996 {
+  from {
+    -webkit-transform: translate(5%, 0);
+            transform: translate(5%, 0);
+  }
+  to {
+    -webkit-transform: translate(5%, -70%);
+            transform: translate(5%, -70%);
+  }
+}
+
+@-webkit-keyframes moveTitleText996 {
+  from {
+    -webkit-transform: translate(40%, -80%);
+            transform: translate(40%, -80%);
+  }
+  to {
+    -webkit-transform: translate(40%, 40%);
+            transform: translate(40%, 40%);
+  }
+}
+
+@keyframes moveTitleText996 {
+  from {
+    -webkit-transform: translate(40%, -80%);
+            transform: translate(40%, -80%);
+  }
+  to {
+    -webkit-transform: translate(40%, 40%);
+            transform: translate(40%, 40%);
+  }
+}
+
+@-webkit-keyframes moveAboutMobile {
+  from {
+    -webkit-transform: translate(55%, 200%);
+            transform: translate(55%, 200%);
+  }
+  to {
+    -webkit-transform: translate(55%, -105%);
+            transform: translate(55%, -105%);
   }
 }
 
 @keyframes moveAboutMobile {
   from {
-    bottom: -10vw;
-    left: 30%;
+    -webkit-transform: translate(55%, 200%);
+            transform: translate(55%, 200%);
   }
   to {
-    bottom: 47vh;
-    left: 30%;
+    -webkit-transform: translate(55%, -105%);
+            transform: translate(55%, -105%);
   }
 }
 
 @-webkit-keyframes moveRecipesMobile {
   from {
-    bottom: -10vw;
-    left: 30%;
+    -webkit-transform: translate(-45%, 250%);
+            transform: translate(-45%, 250%);
   }
   to {
-    bottom: 30vh;
-    left: 30%;
+    -webkit-transform: translate(-45%, -140%);
+            transform: translate(-45%, -140%);
   }
 }
 
 @keyframes moveRecipesMobile {
   from {
-    bottom: -10vw;
-    left: 30%;
+    -webkit-transform: translate(-45%, 250%);
+            transform: translate(-45%, 250%);
   }
   to {
-    bottom: 30vh;
-    left: 30%;
+    -webkit-transform: translate(-45%, -140%);
+            transform: translate(-45%, -140%);
   }
 }
 
 @-webkit-keyframes moveGalleryMobile {
   from {
-    bottom: -10vw;
-    left: 30%;
+    -webkit-transform: translate(-72%, 250%);
+            transform: translate(-72%, 250%);
   }
   to {
-    bottom: 14vh;
-    left: 30%;
+    -webkit-transform: translate(-72%, 190%);
+            transform: translate(-72%, 190%);
   }
 }
 
 @keyframes moveGalleryMobile {
   from {
-    bottom: -10vw;
-    left: 30%;
+    -webkit-transform: translate(-72%, 250%);
+            transform: translate(-72%, 250%);
   }
   to {
-    bottom: 14vh;
-    left: 30%;
+    -webkit-transform: translate(-72%, 190%);
+            transform: translate(-72%, 190%);
   }
 }
 
 @-webkit-keyframes moveTitleTextMobile {
   from {
-    top: -10vw;
-    left: 22vw;
+    -webkit-transform: translate(25%, -250%);
+            transform: translate(25%, -250%);
   }
   to {
-    top: 10vh;
-    left: 22vw;
+    -webkit-transform: translate(25%, 50%);
+            transform: translate(25%, 50%);
   }
 }
 
 @keyframes moveTitleTextMobile {
   from {
-    top: -10vw;
-    left: 22vw;
+    -webkit-transform: translate(25%, -250%);
+            transform: translate(25%, -250%);
   }
   to {
-    top: 10vh;
-    left: 22vw;
+    -webkit-transform: translate(25%, 50%);
+            transform: translate(25%, 50%);
   }
 }
 
 @-webkit-keyframes moveTitleTextMobileHorizontal {
   from {
-    top: -10vw;
-    left: 0vw;
+    -webkit-transform: translate(-2%, 140%);
+            transform: translate(-2%, 140%);
   }
   to {
-    top: -2vh;
-    left: 0vw;
+    -webkit-transform: translate(-2%, 300%);
+            transform: translate(-2%, 300%);
   }
 }
 
 @keyframes moveTitleTextMobileHorizontal {
   from {
-    top: -10vw;
-    left: 0vw;
+    -webkit-transform: translate(-2%, 140%);
+            transform: translate(-2%, 140%);
   }
   to {
-    top: -2vh;
-    left: 0vw;
+    -webkit-transform: translate(-2%, 300%);
+            transform: translate(-2%, 300%);
   }
 }
 
 @-webkit-keyframes moveAboutMobileHorizontal {
   from {
-    top: 30vh;
-    left: -10vw;
+    -webkit-transform: translate(0%, -60%);
+            transform: translate(0%, -60%);
   }
   to {
-    top: 30vh;
-    left: 16vw;
+    -webkit-transform: translate(50%, -60%);
+            transform: translate(50%, -60%);
   }
 }
 
 @keyframes moveAboutMobileHorizontal {
   from {
-    top: 30vh;
-    left: -10vw;
+    -webkit-transform: translate(0%, -60%);
+            transform: translate(0%, -60%);
   }
   to {
-    top: 30vh;
-    left: 16vw;
+    -webkit-transform: translate(50%, -60%);
+            transform: translate(50%, -60%);
   }
 }
 
 @-webkit-keyframes moveRecipesMobileHorizontal {
   from {
-    bottom: -10vw;
-    left: 37vw;
+    -webkit-transform: translate(-10%, 0%);
+            transform: translate(-10%, 0%);
   }
   to {
-    bottom: 16vh;
-    left: 37vw;
+    -webkit-transform: translate(-10%, -50%);
+            transform: translate(-10%, -50%);
   }
 }
 
 @keyframes moveRecipesMobileHorizontal {
   from {
-    bottom: -10vw;
-    left: 37vw;
+    -webkit-transform: translate(-10%, 0%);
+            transform: translate(-10%, 0%);
   }
   to {
-    bottom: 16vh;
-    left: 37vw;
+    -webkit-transform: translate(-10%, -50%);
+            transform: translate(-10%, -50%);
   }
 }
 
 @-webkit-keyframes moveGalleryMobileHorizontal {
   from {
-    top: 30vh;
-    right: -10vw;
+    -webkit-transform: translate(0%, -66%);
+            transform: translate(0%, -66%);
   }
   to {
-    top: 30vh;
-    right: 16vw;
+    -webkit-transform: translate(-55%, -66%);
+            transform: translate(-55%, -66%);
   }
 }
 
 @keyframes moveGalleryMobileHorizontal {
   from {
-    top: 30vh;
-    right: -10vw;
+    -webkit-transform: translate(0%, -66%);
+            transform: translate(0%, -66%);
   }
   to {
-    top: 30vh;
-    right: 16vw;
+    -webkit-transform: translate(-55%, -66%);
+            transform: translate(-55%, -66%);
   }
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 996px) {
+  .title-textShow {
+    font-size: 2.5rem;
+    margin-top: 5%;
+  }
+  .title-text {
+    font-size: 2.5rem;
+    -webkit-animation: moveTitleText996 2s;
+            animation: moveTitleText996 2s;
+  }
+  .about,
+  .aboutShow,
+  .recipes,
+  .recipesShow,
+  .gallery,
+  .galleryShow {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 20vw;
+    height: 20vh;
+    margin: -10px;
+    color: white;
+    letter-spacing: 5px;
+    font-size: 1rem;
+    -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+            box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+  }
+  .recipesShow {
+    margin-top: 90px;
+  }
+  .about {
+    -webkit-animation: moveAbout996 2s;
+            animation: moveAbout996 2s;
+  }
+  .recipes {
+    -webkit-animation: moveRecipes996 2s;
+            animation: moveRecipes996 2s;
+  }
+  .gallery {
+    -webkit-animation: moveGallery996 2s;
+            animation: moveGallery996 2s;
+  }
+}
+
+@media screen and (max-width: 668px) {
   .title-text {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -701,10 +710,12 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    margin-top: 35px;
+    margin-left: 10px;
     width: 100vw;
-    font-size: 3rem;
-    -webkit-animation: moveTitleTextMobileHorizontal 3s;
-            animation: moveTitleTextMobileHorizontal 3s;
+    font-size: 2.2rem;
+    -webkit-animation: moveTitleTextMobileHorizontal 2s;
+            animation: moveTitleTextMobileHorizontal 2s;
   }
   .title-textShow {
     display: -webkit-box;
@@ -716,8 +727,9 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    width: 100vw;
-    font-size: 3rem;
+    margin-top: 50px;
+    margin-left: 10px;
+    font-size: 2.2rem;
   }
   .about,
   .aboutShow,
@@ -736,25 +748,28 @@ body {
             justify-content: center;
     width: 25vw;
     height: 20vh;
-    border: 1px dashed white;
-    border-radius: 40%;
+    margin: -10px;
     color: white;
     letter-spacing: 10px;
     font-size: 1rem;
     -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
             box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
   }
+  .recipesShow {
+    margin-top: 90px;
+    margin-right: 5px;
+  }
   .about {
-    -webkit-animation: moveAboutMobileHorizontal 3s;
-            animation: moveAboutMobileHorizontal 3s;
+    -webkit-animation: moveAboutMobileHorizontal 2s;
+            animation: moveAboutMobileHorizontal 2s;
   }
   .recipes {
-    -webkit-animation: moveRecipesMobileHorizontal 3s;
-            animation: moveRecipesMobileHorizontal 3s;
+    -webkit-animation: moveRecipesMobileHorizontal 2s;
+            animation: moveRecipesMobileHorizontal 2s;
   }
   .gallery {
-    -webkit-animation: moveGalleryMobileHorizontal 3s;
-            animation: moveGalleryMobileHorizontal 3s;
+    -webkit-animation: moveGalleryMobileHorizontal 2s;
+            animation: moveGalleryMobileHorizontal 2s;
   }
 }
 
@@ -782,25 +797,23 @@ body {
             justify-content: center;
     width: 40vw;
     height: 12vh;
-    border: 1px dashed white;
-    border-radius: 40%;
     color: white;
-    letter-spacing: 5px;
+    margin: 15px;
     font-size: 1rem;
     -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
             box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
   }
   .about {
-    -webkit-animation: moveAboutMobile 3s;
-            animation: moveAboutMobile 3s;
+    -webkit-animation: moveAboutMobile 2s;
+            animation: moveAboutMobile 2s;
   }
   .recipes {
-    -webkit-animation: moveRecipesMobile 3s;
-            animation: moveRecipesMobile 3s;
+    -webkit-animation: moveRecipesMobile 2s;
+            animation: moveRecipesMobile 2s;
   }
   .gallery {
-    -webkit-animation: moveGalleryMobile 3s;
-            animation: moveGalleryMobile 3s;
+    -webkit-animation: moveGalleryMobile 2s;
+            animation: moveGalleryMobile 2s;
   }
   .innerBoxContainer {
     -ms-flex-wrap: wrap;
@@ -813,13 +826,17 @@ body {
   .title-text {
     width: 60%;
     font-size: 2rem;
+    margin-left: 20px;
+    margin-top: 10px;
     text-align: center;
     letter-spacing: 1rem;
-    -webkit-animation: moveTitleTextMobile 3s;
-            animation: moveTitleTextMobile 3s;
+    -webkit-animation: moveTitleTextMobile 2s;
+            animation: moveTitleTextMobile 2s;
   }
   .title-textShow {
     width: 60%;
+    margin-left: 60px;
+    margin-top: 10px;
     font-size: 2rem;
     text-align: center;
     letter-spacing: 1rem;

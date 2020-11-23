@@ -1,0 +1,165 @@
+body {
+  margin: 0 auto;
+  height: 100vh;
+  width: 100vw;
+  background: url("../img/spices.jpg");
+  background-size: cover;
+  background-position: 100% 30%;
+  font-family: "Comfortaa";
+  overflow: hidden;
+  /*line below added because of viewport problem on chrome mobile*/
+  height: calc(var(--mh, 1vh) * 100);
+}
+
+.overlayMain {
+  height: 100%;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0f2027), color-stop(#203a43), to(#2c5364));
+  background: linear-gradient(#0f2027, #203a43, #2c5364);
+  background-size: cover;
+  opacity: 0.8;
+}
+
+.about-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  -webkit-box-shadow: 10px 10px 17px -8px rgba(0, 0, 0, 0.5);
+          box-shadow: 10px 10px 17px -8px rgba(0, 0, 0, 0.5);
+  top: 15%;
+  left: 20%;
+  width: 60vw;
+  height: 70vh;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20%;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+          clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  -webkit-animation: about-box-animation 2s;
+          animation: about-box-animation 2s;
+}
+
+@-webkit-keyframes about-box-animation {
+  from {
+    opacity: 0;
+    -webkit-transform: translate(-100%, -100%);
+            transform: translate(-100%, -100%);
+  }
+  to {
+    opacity: 0.8;
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+  }
+}
+
+@keyframes about-box-animation {
+  from {
+    opacity: 0;
+    -webkit-transform: translate(-100%, -100%);
+            transform: translate(-100%, -100%);
+  }
+  to {
+    opacity: 0.8;
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+  }
+}
+
+#about-title {
+  width: 75%;
+  height: 20%;
+  position: absolute;
+  top: 15%;
+  color: white;
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 8px #dc1e1e;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.about-text {
+  width: 75%;
+  height: 20%;
+  position: absolute;
+  top: 15%;
+  margin-top: 10%;
+  color: white;
+  font-size: 1.3rem;
+  text-align: center;
+  text-shadow: 1px 1px 8px #dc1e1e;
+}
+
+.about-text p {
+  margin: 5%;
+}
+
+.back-button {
+  position: absolute;
+  background: url("../img/back.png");
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  top: 85%;
+  left: 47%;
+}
+
+@media screen and (max-width: 996px) {
+  .about-box {
+    top: 5%;
+    height: 90vh;
+  }
+  #about-title {
+    font-size: 1.5rem;
+    margin-top: 8%;
+  }
+  .about-text {
+    margin-top: 20%;
+    font-size: 0.8rem;
+  }
+  .back-button {
+    left: 45%;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media screen and (max-width: 668px) {
+  #about-title {
+    font-size: 1rem;
+    margin-top: 12%;
+    width: 100%;
+  }
+  .about-text {
+    margin-top: 20%;
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .about-box {
+    left: 5%;
+    width: 90vw;
+  }
+  #about-title {
+    font-size: 1.2rem;
+    margin-top: 25%;
+  }
+  .about-text {
+    margin-top: 35%;
+    font-size: 1.2rem;
+  }
+  .about-text p {
+    margin-top: 10%;
+  }
+  .back-button {
+    left: 45%;
+  }
+}
