@@ -82,11 +82,20 @@ let addImage = () => {
     imageContainersArr[i].classList.add(`width-col-${randomSpan}`);
     imageContainersArr[i].classList.add(`height-row-${randomSpan}`);
   }
- 
 };
 
+const upButton = document.querySelector(".up-button");
 
+ const resetScreen = () => {
+ 
+  window.addEventListener('scroll', () => {
+    
+    upButton.classList.toggle("active", window.scrollY > 500);
+  })
 
-/* zadanie na dzis, jest po polnocy :D 
-nadaj losowy grid-column span dla kazdego ze zdjec,
-galeria za kazdym zaladowaniem bedzie inna :)*/
+  upButton.onclick = () => {
+  window.scrollTo(0, 0);
+  }
+}
+
+console.log(document.documentElement.scrollTop);
