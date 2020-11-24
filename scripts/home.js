@@ -17,7 +17,7 @@
       gallery.classList.add("galleryShow");
       title.classList.add("title-textShow");
       container.classList.add("containerShow");
-    }, 1800);
+    }, 800);
 
     // adjusting elements on smaller screens in landscape mode
 

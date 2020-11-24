@@ -63,8 +63,8 @@ body {
   position: absolute;
   top: 50%;
   left: 0;
-  -webkit-animation: moveAbout 2s;
-          animation: moveAbout 2s;
+  -webkit-animation: moveAbout 1s;
+          animation: moveAbout 1s;
 }
 
 .about:hover {
@@ -99,8 +99,8 @@ body {
   position: absolute;
   bottom: 0;
   left: 40%;
-  -webkit-animation: moveRecipes 2s;
-          animation: moveRecipes 2s;
+  -webkit-animation: moveRecipes 1s;
+          animation: moveRecipes 1s;
 }
 
 .recipes:hover {
@@ -135,8 +135,8 @@ body {
   position: absolute;
   top: 50%;
   right: 0;
-  -webkit-animation: moveGallery 2s;
-          animation: moveGallery 2s;
+  -webkit-animation: moveGallery 1s;
+          animation: moveGallery 1s;
 }
 
 .gallery:hover {
@@ -253,8 +253,8 @@ body {
   left: 15vw;
   height: 55vh;
   width: 70vw;
-  -webkit-animation: fadeIn 2s;
-          animation: fadeIn 2s;
+  -webkit-animation: fadeIn 1s;
+          animation: fadeIn 1s;
 }
 
 .title-text {
@@ -265,8 +265,8 @@ body {
   letter-spacing: 10px;
   color: white;
   text-shadow: 1px 1px 8px #dc1e1e;
-  -webkit-animation: moveTitleText 2s;
-          animation: moveTitleText 2s;
+  -webkit-animation: moveTitleText 1s;
+          animation: moveTitleText 1s;
 }
 
 .title-textShow {
@@ -655,8 +655,8 @@ body {
   }
   .title-text {
     font-size: 2.5rem;
-    -webkit-animation: moveTitleText996 2s;
-            animation: moveTitleText996 2s;
+    -webkit-animation: moveTitleText996 1s;
+            animation: moveTitleText996 1s;
   }
   .about,
   .aboutShow,
@@ -686,16 +686,16 @@ body {
     margin-top: 90px;
   }
   .about {
-    -webkit-animation: moveAbout996 2s;
-            animation: moveAbout996 2s;
+    -webkit-animation: moveAbout996 1s;
+            animation: moveAbout996 1s;
   }
   .recipes {
-    -webkit-animation: moveRecipes996 2s;
-            animation: moveRecipes996 2s;
+    -webkit-animation: moveRecipes996 1s;
+            animation: moveRecipes996 1s;
   }
   .gallery {
-    -webkit-animation: moveGallery996 2s;
-            animation: moveGallery996 2s;
+    -webkit-animation: moveGallery996 1s;
+            animation: moveGallery996 1s;
   }
 }
 
@@ -714,8 +714,8 @@ body {
     margin-left: 10px;
     width: 100vw;
     font-size: 2.2rem;
-    -webkit-animation: moveTitleTextMobileHorizontal 2s;
-            animation: moveTitleTextMobileHorizontal 2s;
+    -webkit-animation: moveTitleTextMobileHorizontal 1s;
+            animation: moveTitleTextMobileHorizontal 1s;
   }
   .title-textShow {
     display: -webkit-box;
@@ -760,16 +760,16 @@ body {
     margin-right: 5px;
   }
   .about {
-    -webkit-animation: moveAboutMobileHorizontal 2s;
-            animation: moveAboutMobileHorizontal 2s;
+    -webkit-animation: moveAboutMobileHorizontal 1s;
+            animation: moveAboutMobileHorizontal 1s;
   }
   .recipes {
-    -webkit-animation: moveRecipesMobileHorizontal 2s;
-            animation: moveRecipesMobileHorizontal 2s;
+    -webkit-animation: moveRecipesMobileHorizontal 1s;
+            animation: moveRecipesMobileHorizontal 1s;
   }
   .gallery {
-    -webkit-animation: moveGalleryMobileHorizontal 2s;
-            animation: moveGalleryMobileHorizontal 2s;
+    -webkit-animation: moveGalleryMobileHorizontal 1s;
+            animation: moveGalleryMobileHorizontal 1s;
   }
 }
 
@@ -804,16 +804,16 @@ body {
             box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
   }
   .about {
-    -webkit-animation: moveAboutMobile 2s;
-            animation: moveAboutMobile 2s;
+    -webkit-animation: moveAboutMobile 1s;
+            animation: moveAboutMobile 1s;
   }
   .recipes {
-    -webkit-animation: moveRecipesMobile 2s;
-            animation: moveRecipesMobile 2s;
+    -webkit-animation: moveRecipesMobile 1s;
+            animation: moveRecipesMobile 1s;
   }
   .gallery {
-    -webkit-animation: moveGalleryMobile 2s;
-            animation: moveGalleryMobile 2s;
+    -webkit-animation: moveGalleryMobile 1s;
+            animation: moveGalleryMobile 1s;
   }
   .innerBoxContainer {
     -ms-flex-wrap: wrap;
@@ -830,8 +830,8 @@ body {
     margin-top: 10px;
     text-align: center;
     letter-spacing: 1rem;
-    -webkit-animation: moveTitleTextMobile 2s;
-            animation: moveTitleTextMobile 2s;
+    -webkit-animation: moveTitleTextMobile 1s;
+            animation: moveTitleTextMobile 1s;
   }
   .title-textShow {
     width: 60%;

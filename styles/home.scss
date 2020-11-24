@@ -79,7 +79,7 @@ $innerColor: #dc1e1e;
   &:hover {
     @include innerBoxHover;
   }
-  animation: moveAbout 2s;
+  animation: moveAbout 1s;
 }
 
 .recipes {
@@ -90,7 +90,7 @@ $innerColor: #dc1e1e;
   &:hover {
     @include innerBoxHover;
   }
-  animation: moveRecipes 2s;
+  animation: moveRecipes 1s;
 }
 
 .gallery {
@@ -101,7 +101,7 @@ $innerColor: #dc1e1e;
   &:hover {
     @include innerBoxHover;
   }
-  animation: moveGallery 2s;
+  animation: moveGallery 1s;
 }
 
 .aboutShow {
@@ -139,7 +139,7 @@ $innerColor: #dc1e1e;
   left: 15vw;
   height: 55vh;
   width: 70vw;
-  animation: fadeIn 2s;
+  animation: fadeIn 1s;
 }
 
 
@@ -152,7 +152,7 @@ $innerColor: #dc1e1e;
   letter-spacing: 10px;
   color: white;
   text-shadow: 1px 1px 8px $innerColor;
-  animation: moveTitleText 2s;
+  animation: moveTitleText 1s;
 }
 
 .title-textShow {
@@ -374,7 +374,7 @@ $innerColor: #dc1e1e;
   
   .title-text{
     font-size: 2.5rem;
-    animation: moveTitleText996 2s;
+    animation: moveTitleText996 1s;
   }
 
   .about,
@@ -391,15 +391,15 @@ $innerColor: #dc1e1e;
   }
 
   .about{
-    animation: moveAbout996 2s;
+    animation: moveAbout996 1s;
   }
 
   .recipes{
-    animation: moveRecipes996 2s;
+    animation: moveRecipes996 1s;
   }
 
   .gallery{
-    animation: moveGallery996 2s;
+    animation: moveGallery996 1s;
   }
 
 }
@@ -415,7 +415,7 @@ $innerColor: #dc1e1e;
     margin-left: 10px;
     width: 100vw;
     font-size: 2.2rem;
-    animation: moveTitleTextMobileHorizontal 2s;
+    animation: moveTitleTextMobileHorizontal 1s;
   }
 
   .title-textShow {
@@ -442,15 +442,15 @@ $innerColor: #dc1e1e;
   }
 
   .about{
-    animation: moveAboutMobileHorizontal 2s;
+    animation: moveAboutMobileHorizontal 1s;
   }
 
   .recipes{
-    animation: moveRecipesMobileHorizontal 2s;
+    animation: moveRecipesMobileHorizontal 1s;
   }
 
   .gallery{
-    animation: moveGalleryMobileHorizontal 2s;
+    animation: moveGalleryMobileHorizontal 1s;
   }
 
 
@@ -474,15 +474,15 @@ $innerColor: #dc1e1e;
   }
 
   .about {
-    animation: moveAboutMobile 2s;
+    animation: moveAboutMobile 1s;
   }
 
   .recipes {
-    animation: moveRecipesMobile 2s;
+    animation: moveRecipesMobile 1s;
   }
 
   .gallery {
-    animation: moveGalleryMobile 2s;
+    animation: moveGalleryMobile 1s;
   }
 
   .innerBoxContainer {
@@ -500,7 +500,7 @@ $innerColor: #dc1e1e;
     margin-top: 10px;
     text-align: center;
     letter-spacing: 1rem;
-    animation: moveTitleTextMobile 2s;
+    animation: moveTitleTextMobile 1s;
   }
 
   .title-textShow {

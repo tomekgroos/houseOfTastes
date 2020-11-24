@@ -1,3 +1,4 @@
+// Array of images sources
 const galleryArray = [
   "../img/gallery/food (1).jpg",
   "../img/gallery/food (2).jpg",
@@ -41,9 +42,12 @@ const galleryArray = [
   "../img/gallery/food (40).jpg",
 ];
 
+//catching main container hard coded into html
 const container = document.querySelector(".container");
+// catching zoom overlay
+const fOver = document.querySelector(".fullOverlay");
 
-let addImage = () => {
+const addImage = () => {
   galleryArray.forEach((item) => {
     // creating gallery elements
     let imageContainer = document.createElement("div");
@@ -63,39 +67,57 @@ let addImage = () => {
     imageBox.classList.add("image-box");
     addText.classList.add("zoom-info");
     addText.innerHTML = "click to zoom";
+
     // each image source comes from galleryArray
     addImage.src = `${item}`;
-
   });
   // catching all divs with image-box class and all img elements
   const imageContainers = document.querySelectorAll(".gallery-image-container");
   const images = document.querySelectorAll("img");
-  // create an array from them
-  const imageContainersArr = [...imageContainers];
-  const imagesArr = [...images];
-  // add id attribute for each image box and alt for each image
-  for (let i = 0; i < imageContainersArr.length; i++) {
-    imageContainersArr[i].setAttribute("id", `image${i + 1}`);
-    imagesArr[i].setAttribute("alt", `food${i + 1}`);
+  for (let i = 0; i < imageContainers.length; i++) {
+    // add alt attribute for each image
+    images[i].setAttribute("alt", `food${i + 1}`);
     // add a random size of each gallery-image-container
     let randomSpan = Math.ceil(Math.random() * 2);
-    imageContainersArr[i].classList.add(`width-col-${randomSpan}`);
-    imageContainersArr[i].classList.add(`height-row-${randomSpan}`);
+    imageContainers[i].classList.add(`width-col-${randomSpan}`);
+    imageContainers[i].classList.add(`height-row-${randomSpan}`);
   }
 };
 
+// back to top button function
 const upButton = document.querySelector(".up-button");
 
- const resetScreen = () => {
- 
-  window.addEventListener('scroll', () => {
-    
+const resetScreen = () => {
+  window.addEventListener("scroll", () => {
     upButton.classList.toggle("active", window.scrollY > 500);
-  })
+  });
 
   upButton.onclick = () => {
-  window.scrollTo(0, 0);
-  }
-}
+    window.scrollTo(0, 0);
+  };
+};
 
-console.log(document.documentElement.scrollTop);
+// add zoom functionality
+const zoomImage = () => {
+  window.onresize = checkResize;
+
+  function checkResize() {
+    if (innerWidth > 680) {
+      const images = document.querySelectorAll("img");
+      const zoomImg = document.getElementById("zoom-box");
+      const overlay = document.querySelector(".fullOverlay");
+      for (let z = 0; z < images.length; z++) {
+        images[z].addEventListener("click", () => {
+          let cloneImg = images[z].cloneNode(true);
+          fOver.classList.add("active");
+          zoomImg.appendChild(cloneImg);
+        });
+      }
+
+      fOver.addEventListener("click", () => {
+        fOver.classList.remove("active");
+        zoomImg.removeChild(zoomImg.lastChild);
+      });
+    }
+  }
+};
