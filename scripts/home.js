@@ -30,11 +30,4 @@
     }
 
 
-    // reload page on orientationchange (mobile)
-
-    window.onorientationchange = () =>{
-        window.location.reload();
-    }
-
- 
- 
+   

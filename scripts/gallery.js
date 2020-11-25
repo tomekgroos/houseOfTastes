@@ -101,8 +101,23 @@ const resetScreen = () => {
 const zoomImage = () => {
   window.onresize = checkResize;
 
+  // function zooming the image
+
   function checkResize() {
-    if (innerWidth > 680) {
+    if (window.innerWidth < 680) {
+      const images = document.querySelectorAll("img");
+      for (let z = 0; z < images.length; z++) {
+        images[z].removeEventListener(
+          "click",
+          () => {
+            let cloneImg = images[z].cloneNode(false);
+          },
+          false
+        );
+      }
+    }
+  }
+    if (window.innerWidth > 680) {
       const images = document.querySelectorAll("img");
       const zoomImg = document.getElementById("zoom-box");
       const overlay = document.querySelector(".fullOverlay");
@@ -113,11 +128,10 @@ const zoomImage = () => {
           zoomImg.appendChild(cloneImg);
         });
       }
-
       fOver.addEventListener("click", () => {
         fOver.classList.remove("active");
         zoomImg.removeChild(zoomImg.lastChild);
       });
-    }
-  }
+    } 
+  
 };
