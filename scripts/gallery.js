@@ -90,7 +90,7 @@ const upButton = document.querySelector(".up-button");
  
   window.addEventListener('scroll', () => {
     
-    upButton.classList.toggle("active", window.scrollY > 500);
+    upButton.classList.toggle("active", window.pageYOffset > 500);
   })
 
   upButton.onclick = () => {
