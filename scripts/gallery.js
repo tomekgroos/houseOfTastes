@@ -97,5 +97,3 @@ const upButton = document.querySelector(".up-button");
   window.scrollTo(0, 0);
   }
 }
-
-console.log(document.documentElement.scrollTop);

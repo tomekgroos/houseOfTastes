@@ -25,7 +25,7 @@ body {
   font-family: "mex";
 }
 
-.innerBoxContainer {
+.innerButtonContainer {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -58,8 +58,7 @@ body {
   background: rgba(255, 255, 255, 0.2);
   letter-spacing: 10px;
   font-size: 1.75rem;
-  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
-          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
+  button-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
   position: absolute;
   top: 50%;
   left: 0;
@@ -94,8 +93,7 @@ body {
   background: rgba(255, 255, 255, 0.2);
   letter-spacing: 10px;
   font-size: 1.75rem;
-  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
-          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
+  button-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
   position: absolute;
   bottom: 0;
   left: 40%;
@@ -130,8 +128,7 @@ body {
   background: rgba(255, 255, 255, 0.2);
   letter-spacing: 10px;
   font-size: 1.75rem;
-  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
-          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
+  button-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
   position: absolute;
   top: 50%;
   right: 0;
@@ -166,8 +163,7 @@ body {
   background: rgba(255, 255, 255, 0.2);
   letter-spacing: 10px;
   font-size: 1.75rem;
-  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
-          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
+  button-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
 }
 
 .aboutShow:hover {
@@ -197,8 +193,7 @@ body {
   background: rgba(255, 255, 255, 0.2);
   letter-spacing: 10px;
   font-size: 1.75rem;
-  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
-          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
+  button-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
   margin-top: 130px;
 }
 
@@ -229,8 +224,7 @@ body {
   background: rgba(255, 255, 255, 0.2);
   letter-spacing: 10px;
   font-size: 1.75rem;
-  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
-          box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
+  button-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
 }
 
 .galleryShow:hover {
@@ -651,7 +645,7 @@ body {
 @media screen and (max-width: 996px) {
   .title-textShow {
     font-size: 2.5rem;
-    margin-top: 5%;
+    margin-top: 10%;
   }
   .title-text {
     font-size: 2.5rem;
@@ -679,8 +673,7 @@ body {
     color: white;
     letter-spacing: 5px;
     font-size: 1rem;
-    -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
-            box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+    button-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
   }
   .recipesShow {
     margin-top: 90px;
@@ -747,13 +740,12 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
     width: 25vw;
-    height: 20vh;
+    height: 15vh;
     margin: -10px;
     color: white;
     letter-spacing: 10px;
-    font-size: 1rem;
-    -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
-            box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+    font-size: .8rem;
+    button-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
   }
   .recipesShow {
     margin-top: 90px;
@@ -800,8 +792,7 @@ body {
     color: white;
     margin: 15px;
     font-size: 1rem;
-    -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
-            box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+    button-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
   }
   .about {
     -webkit-animation: moveAboutMobile 2s;
@@ -815,7 +806,7 @@ body {
     -webkit-animation: moveGalleryMobile 2s;
             animation: moveGalleryMobile 2s;
   }
-  .innerBoxContainer {
+  .innerButtonContainer {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     width: 100%;

@@ -37,7 +37,9 @@
 $innerColor: #dc1e1e;
 
 
-@mixin innerBox {
+// mixing for buttons styling
+
+@mixin innerButton {
   @include flex-center;
   width: 18vw;
   height: 15vh;
@@ -48,18 +50,18 @@ $innerColor: #dc1e1e;
   background: rgba(255, 255, 255, 0.2); 
   letter-spacing: 10px;
   font-size:  1.75rem;
-  box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
+  button-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
 }
 
-@mixin innerBoxHover {
+@mixin innerButtonHover {
   background-color: white;
   color: $innerColor;
   transition: 1s;
 }
 
+// buttons and container for buttons before animation
 
-
-.innerBoxContainer {
+.innerButtonContainer {
   position: absolute;
   display: flex;
   justify-content: space-around;
@@ -71,59 +73,62 @@ $innerColor: #dc1e1e;
 
 
 
+
 .about {
-  @include innerBox;
+  @include innerButton;
   position: absolute;
   top: 50%;
   left:0;
   &:hover {
-    @include innerBoxHover;
+    @include innerButtonHover;
   }
   animation: moveAbout 2s;
 }
 
 .recipes {
-  @include innerBox;
+  @include innerButton;
   position: absolute;
   bottom: 0;
   left:40%;
   &:hover {
-    @include innerBoxHover;
+    @include innerButtonHover;
   }
   animation: moveRecipes 2s;
 }
 
 .gallery {
-  @include innerBox;
+  @include innerButton;
   position: absolute;
   top:50%;
   right:0;
   &:hover {
-    @include innerBoxHover;
+    @include innerButtonHover;
   }
   animation: moveGallery 2s;
 }
 
+// buttons and container for buttons after animation
+
 .aboutShow {
-  @include innerBox;
+  @include innerButton;
   &:hover {
-    @include innerBoxHover;
+    @include innerButtonHover;
   }
   
 }
 
 .recipesShow {
-  @include innerBox;
+  @include innerButton;
   margin-top: 130px;
   &:hover {
-    @include innerBoxHover;
+    @include innerButtonHover;
   }
 }
 
 .galleryShow {
-  @include innerBox;
+  @include innerButton;
   &:hover {
-    @include innerBoxHover;
+    @include innerButtonHover;
   }
 }
 
@@ -332,28 +337,28 @@ $innerColor: #dc1e1e;
   }
 }
 
-@mixin innerBoxMobile420 {
+@mixin innerButtonMobile420 {
   @include flex-center;
   width: 40vw;
   height: 12vh;
   color: white;
   margin: 15px;
   font-size: 1rem;
-  box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+  button-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
 }
 
- @mixin innerBoxMobile667 {
+ @mixin innerButtonMobile667 {
   @include flex-center;
   width: 25vw;
-  height: 20vh;
+  height: 15vh;
   margin: -10px;
   color: white;
   letter-spacing: 10px;
-  font-size: 1rem;
-  box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+  font-size: .8rem;
+  button-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
 } 
 
-@mixin innerBoxMobile996 {
+@mixin innerButtonMobile996 {
   @include flex-center;
   width: 20vw;
   height: 20vh;
@@ -361,7 +366,7 @@ $innerColor: #dc1e1e;
   color: white;
   letter-spacing: 5px;
   font-size: 1rem;
-  box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+  button-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
 } 
 
 // horizontal mobile media queries 996
@@ -369,7 +374,7 @@ $innerColor: #dc1e1e;
 @media screen and (max-width: 996px){
   .title-textShow{
     font-size: 2.5rem;
-    margin-top: 5%;
+    margin-top: 10%;
   }
   
   .title-text{
@@ -383,7 +388,7 @@ $innerColor: #dc1e1e;
   .recipesShow,
   .gallery,
   .galleryShow {
-    @include innerBoxMobile996;
+    @include innerButtonMobile996;
   }
 
   .recipesShow{
@@ -433,7 +438,7 @@ $innerColor: #dc1e1e;
   .recipesShow,
   .gallery,
   .galleryShow {
-    @include innerBoxMobile667;
+    @include innerButtonMobile667;
   }
 
   .recipesShow{
@@ -470,7 +475,7 @@ $innerColor: #dc1e1e;
   .recipesShow,
   .gallery,
   .galleryShow {
-    @include innerBoxMobile420;
+    @include innerButtonMobile420;
   }
 
   .about {
@@ -485,7 +490,7 @@ $innerColor: #dc1e1e;
     animation: moveGalleryMobile 2s;
   }
 
-  .innerBoxContainer {
+  .innerButtonContainer {
     flex-wrap: wrap;
     width: 100%;
     height: 85%;
