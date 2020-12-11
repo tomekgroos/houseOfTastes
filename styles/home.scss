@@ -198,11 +198,26 @@ $innerColor: #dc1e1e;
   }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 740px) {
+
+  @keyframes moveTitle740 {
+    from {
+      transform: translate(-50%, -20%);
+    }
+  
+    to {
+      transform: translate(-50%, 150%);
+    }
+  }
+
   .title-text,
   .title-textShow {
     text-align: center;
-    width: 50%;
+    width: 80%;
+  }
+
+  .title-text{
+    animation: moveTitle740 1.5s;
   }
 
   .about,
@@ -210,7 +225,14 @@ $innerColor: #dc1e1e;
   .gallery {
     font-size: 1rem;
     height: 15vh;
+    letter-spacing: 6px;
   }
+
+  .innerButtonContainer,
+  .innerButtonContainerShow {
+    width: 100%;
+  }
+
 }
 
 // vertical mobile media queries
@@ -231,8 +253,12 @@ $innerColor: #dc1e1e;
     }
 
     to {
-      transform: translate(-50%, 95%);
+      transform: translate(-50%, 85%);
     }
+  }
+
+  .title-text, .title-textShow{
+    width: 50%;
   }
 
   .title-text {
@@ -275,3 +301,7 @@ $innerColor: #dc1e1e;
     margin: 0;
   }
 }
+
+@media screen and (max-width: 320px) {
+  
+  }
