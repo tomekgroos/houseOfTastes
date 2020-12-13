@@ -1,7 +1,7 @@
 // Array of images sources
 const galleryArray = [
   "img/gallery/food (1).jpg",
-  "img/gallery/food (2).jpg",
+  "img/gallery/food (2).JPG",
   "img/gallery/food (3).jpg",
   "img/gallery/food (4).jpg",
   "img/gallery/food (5).jpg",
