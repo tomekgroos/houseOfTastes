@@ -41,8 +41,8 @@ body {
   border-radius: 20%;
   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
           clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  -webkit-animation: about-box-animation 2s;
-          animation: about-box-animation 2s;
+  -webkit-animation: about-box-animation 1s;
+          animation: about-box-animation 1s;
 }
 
 @-webkit-keyframes about-box-animation {

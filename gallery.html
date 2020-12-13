@@ -16,11 +16,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
-  <body onload="addImage(), resetScreen()">
+  <body onload="addImage(), resetScreen(), zoomImage()">
     <header class="gallery-title">
       <a href="./home.html"><div class="back-gallery-button"></div></a>
       <p>Food from my kitchen and more</p>
     </header>
+    <div id="zoom-box"></div>
+    <div class="fullOverlay"></div>
     <div class="container"></div>
     <span class="up-button"></span>
   </body>

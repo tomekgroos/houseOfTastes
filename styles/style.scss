@@ -100,6 +100,12 @@ body {
   }
 }
 
+@media only screen and (max-width: 978px) {
+  .overlay-inner p{
+    font-size: 1.2rem;
+  }
+}
+
 @media only screen and (max-width: 667px) {
   
 
@@ -111,9 +117,6 @@ body {
     letter-spacing: 1px;
   }
 
-  .overlay-inner p {
-    padding: 50px;
-  }
 
   .media-box video {
     visibility: hidden;

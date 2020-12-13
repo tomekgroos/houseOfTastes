@@ -1,29 +1,29 @@
-  
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
 
-  
-  body {
-  margin:0 auto;
+body {
   height: 100vh;
   width: 100vw;
-  background: url('../img/spices.jpg');
+  background: url("../img/spices.jpg");
   background-size: cover;
   background-position: 100% 30%;
   font-family: "mex";
   overflow: hidden;
   /*line below added because of viewport problem on chrome mobile*/
-  height: calc(var(--mh, 1vh)*100);
-  }
+  height: calc(var(--mh, 1vh) * 100);
+}
 
+.overlayMain {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(#0f2027, #203a43, #2c5364);
+  background-size: cover;
+  opacity: 0.8;
+}
 
-  .overlayMain{
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(#0F2027,#203A43,#2C5364);
-    background-size: cover;
-    opacity: 0.8;
-  }
-
-@mixin flex-center{
+@mixin flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,8 +37,6 @@
 $innerColor: #dc1e1e;
 
 
-// mixing for buttons styling
-
 @mixin innerButton {
   @include flex-center;
   width: 18vw;
@@ -47,9 +45,11 @@ $innerColor: #dc1e1e;
   border-radius: 30%;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   color: white;
-  background: rgba(255, 255, 255, 0.2); 
+  background: rgba(255, 255, 255, 0.2);
   letter-spacing: 10px;
-  font-size:  1.75rem;
+
+  font-size: 1.75rem;
+
   button-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
 }
 
@@ -59,461 +59,267 @@ $innerColor: #dc1e1e;
   transition: 1s;
 }
 
-// buttons and container for buttons before animation
 
 .innerButtonContainer {
-  position: absolute;
   display: flex;
   justify-content: space-around;
-  width: 100%;
-  height: 85%;
-  top: 10vh;
-  cursor: pointer;
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50vh;
+  width: 70vw;
+  animation: moveInnerButtonContainer 1.5s;
 }
 
-
-
+.innerButtonContainerShow {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50vh;
+  width: 70vw;
+}
 
 .about {
+
+
   @include innerButton;
-  position: absolute;
-  top: 50%;
-  left:0;
   &:hover {
     @include innerButtonHover;
   }
-  animation: moveAbout 2s;
 }
+
 
 .recipes {
   @include innerButton;
-  position: absolute;
-  bottom: 0;
-  left:40%;
+  margin-top: 50%;
+
   &:hover {
     @include innerButtonHover;
   }
-  animation: moveRecipes 2s;
 }
 
 .gallery {
-  @include innerButton;
-  position: absolute;
-  top:50%;
-  right:0;
-  &:hover {
-    @include innerButtonHover;
-  }
-  animation: moveGallery 2s;
-}
 
-// buttons and container for buttons after animation
 
-.aboutShow {
-  @include innerButton;
-  &:hover {
-    @include innerButtonHover;
-  }
-  
-}
-
-.recipesShow {
-  @include innerButton;
-  margin-top: 130px;
-  &:hover {
-    @include innerButtonHover;
-  }
-}
-
-.galleryShow {
   @include innerButton;
   &:hover {
     @include innerButtonHover;
   }
 }
-
-
-
-.containerShow {
-  display: flex;
-  justify-content: space-around;
-  position: absolute;
-  top: 30vh;
-  right: 15vw;
-  bottom: 5vh;
-  left: 15vw;
-  height: 55vh;
-  width: 70vw;
-  animation: fadeIn 2s;
-}
-
-
 
 .title-text {
   position: absolute;
+  left: 50%;
+  transform: translate(-50%);
   top: 0;
-  left:50;
   font-size: 4rem;
   letter-spacing: 10px;
   color: white;
   text-shadow: 1px 1px 8px $innerColor;
-  animation: moveTitleText 2s;
+  animation: moveTitle 1.5s;
 }
 
 .title-textShow {
-  position: relative;
-  top: -22vh;
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  transform: translate(-50%);
   font-size: 4rem;
   letter-spacing: 10px;
   color: white;
   text-shadow: 1px 1px 8px $innerColor;
 }
 
-// desktop animation
+// animation
 
-
-
-@keyframes moveAbout {
+@keyframes moveTitle {
   from {
-    transform: translate(-50%,-68%);
+    transform: translate(-50%, -20%);
+  }
+
+  to {
+    transform: translate(-50%, 140%);
+  }
+}
+
+@keyframes moveInnerButtonContainer {
+  from {
+    transform: translate(-50%, 0%);
   }
   to {
-    transform: translate(95%, -68%);
+    transform: translate(-50%, -160%);
   }
 }
 
-@keyframes moveGallery {
-  from {
-    transform: translate(68%, -50%);
-  }
-  to {
-    transform: translate(-95%, -68%);
-  }
-}
+// horizontal media queries
 
-@keyframes moveRecipes {
-  from {
-    transform: translate(5%,0);
-  }
-  to {
-    transform: translate(5%,-150%);
-  }
-}
-
-@keyframes moveTitleText {
-  from {
-    transform: translate(82%,0);
-  }
-  to {
-    transform: translate(82%,80%);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-// under 996 Animation
-
-@keyframes moveAbout996 {
-  from {
-    transform: translate(-50%,-68%);
-  }
-  to {
-    transform: translate(95%, -68%);
-  }
-}
-
-@keyframes moveGallery996 {
-  from {
-    transform: translate(68%, -50%);
-  }
-  to {
-    transform: translate(-95%, -68%);
-  }
-}
-
-@keyframes moveRecipes996 {
-  from {
-    transform: translate(5%,0);
-  }
-  to {
-    transform: translate(5%,-70%);
-  }
-}
-
-@keyframes moveTitleText996 {
-  from {
-    transform: translate(40%,-80%);
-  }
-  to {
-    transform: translate(40%,40%);
-  }
-}
-
-
-
-// mobile Vertical Animation
-
-@keyframes moveAboutMobile {
-  from {
-    transform: translate(55%, 200%);
-  }
-  to {
-    transform: translate(55%, -105%);
-  }
-}
-
-@keyframes moveRecipesMobile {
-  from {
-    transform: translate(-45%, 250%);
-  }
-  to {
-    transform: translate(-45%, -140%);
-  }
-}
-
-@keyframes moveGalleryMobile {
-  from {
-    transform: translate(-72%, 250%);
-  }
-  to {
-    transform: translate(-72%, 190%);
-  }
-  
-}
-
-@keyframes moveTitleTextMobile {
-  from {
-    transform: translate(25%, -250%);
-  }
-  to {
-    transform: translate(25%, 50%);
-  }
-}
-
-// mobile Horizontal Animation
-
-
-@keyframes moveTitleTextMobileHorizontal {
-  from {
-    transform: translate(-2%, 140%);
-  }
-  to {
-    transform: translate(-2%, 300%);
-  }
-}
-
-
-@keyframes moveAboutMobileHorizontal{
-  from{
-    transform: translate(0%, -60%);
-  }
-  to{
-    transform: translate(50%, -60%);
-  }
-}
-
-@keyframes moveRecipesMobileHorizontal{
-  from {
-    transform: translate(-10%, 0%);
-  }
-  to {
-    transform: translate(-10%, -50%);
-  }
-}
-
-@keyframes moveGalleryMobileHorizontal{
-  from{
-    transform: translate(0%, -66%);
-  }
-  to{
-    transform: translate(-55%, -66%);
-  }
-}
-
-@mixin innerButtonMobile420 {
-  @include flex-center;
-  width: 40vw;
-  height: 12vh;
-  color: white;
-  margin: 15px;
-  font-size: 1rem;
-  button-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
-}
-
- @mixin innerButtonMobile667 {
-  @include flex-center;
-  width: 25vw;
-  height: 15vh;
-  margin: -10px;
-  color: white;
-  letter-spacing: 10px;
-  font-size: .8rem;
-  button-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
-} 
-
-@mixin innerButtonMobile996 {
-  @include flex-center;
-  width: 20vw;
-  height: 20vh;
-  margin: -10px;
-  color: white;
-  letter-spacing: 5px;
-  font-size: 1rem;
-  button-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
-} 
-
-// horizontal mobile media queries 996
-
-@media screen and (max-width: 996px){
-  .title-textShow{
-    font-size: 2.5rem;
-    margin-top: 10%;
-  }
-  
-  .title-text{
-    font-size: 2.5rem;
-    animation: moveTitleText996 2s;
-  }
-
-  .about,
-  .aboutShow,
-  .recipes,
-  .recipesShow,
-  .gallery,
-  .galleryShow {
-    @include innerButtonMobile996;
-  }
-
-  .recipesShow{
-    margin-top: 90px;
-  }
-
-  .about{
-    animation: moveAbout996 2s;
-  }
-
-  .recipes{
-    animation: moveRecipes996 2s;
-  }
-
-  .gallery{
-    animation: moveGallery996 2s;
-  }
-
-}
-
-// horizontal mobile media queries 668
-
-@media screen and (max-width: 668px) {
-
- 
-  .title-text {
-    @include flex-center;
-    margin-top: 35px;
-    margin-left: 10px;
-    width: 100vw;
-    font-size: 2.2rem;
-    animation: moveTitleTextMobileHorizontal 2s;
-  }
-
+@media screen and (max-width: 1160px) {
+  .title-text,
   .title-textShow {
-    @include flex-center;
-    margin-top: 50px;
-    margin-left: 10px;
-    font-size: 2.2rem; 
+    font-size: 3rem;
   }
 
-
-  
   .about,
-  .aboutShow,
   .recipes,
-  .recipesShow,
-  .gallery,
-  .galleryShow {
-    @include innerButtonMobile667;
+  .gallery {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .title-text,
+  .title-textShow {
+    font-size: 2.5rem;
+  }
+  .about,
+  .recipes,
+  .gallery {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .title-text,
+  .title-textShow {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .title-text,
+  .title-textShow {
+    font-size: 2rem;
   }
 
-  .recipesShow{
-    margin-top: 90px;
-    margin-right:5px;
+  .innerButtonContainer,
+  .innerButtonContainerShow {
+    width: 80%;
   }
 
-  .about{
-    animation: moveAboutMobileHorizontal 2s;
+  .about,
+  .recipes,
+  .gallery {
+    width: 25vw;
+    height: 20vh;
+  }
+}
+
+@media screen and (max-width: 740px) {
+
+  @keyframes moveTitle740 {
+    from {
+      transform: translate(-50%, -20%);
+    }
+  
+    to {
+      transform: translate(-50%, 150%);
+    }
   }
 
-  .recipes{
-    animation: moveRecipesMobileHorizontal 2s;
-  }
-
-  .gallery{
-    animation: moveGalleryMobileHorizontal 2s;
+  .title-text,
+  .title-textShow {
+    text-align: center;
+    width: 80%;
   }
 
 
+
+  .title-text{
+    animation: moveTitle740 1.5s;
   }
+
+  .about,
+  .recipes,
+
+  .gallery {
+    font-size: 1rem;
+    height: 15vh;
+    letter-spacing: 6px;
+
+  }
+
+  .innerButtonContainer,
+  .innerButtonContainerShow {
+    width: 100%;
+  }
+
+}
 
 // vertical mobile media queries
 
-@media screen and (max-width: 420px ){
-  .recipes,
-  .recipesShow {
-    align-self: normal;
+@media screen and (max-width: 420px) {
+  @mixin innerButtonMobile420 {
+    @include flex-center;
+    width: 40vw;
+    height: 12vh;
+    color: white;
+    font-size: 1rem;
+    button-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
   }
 
-  .about,
-  .aboutShow,
-  .recipes,
-  .recipesShow,
-  .gallery,
-  .galleryShow {
-    @include innerButtonMobile420;
+  @keyframes moveTitle420 {
+    from {
+      transform: translate(-50%, -20%);
+    }
+
+
+    to {
+      transform: translate(-50%, 85%);
+    }
+
   }
 
-  .about {
-    animation: moveAboutMobile 2s;
-  }
-
-  .recipes {
-    animation: moveRecipesMobile 2s;
-  }
-
-  .gallery {
-    animation: moveGalleryMobile 2s;
-  }
-
-  .innerButtonContainer {
-    flex-wrap: wrap;
-    width: 100%;
-    height: 85%;
-    top: 10vh;
-    cursor: pointer;
+  .title-text, .title-textShow{
+    width: 50%;
   }
 
   .title-text {
-    width: 60%;
     font-size: 2rem;
-    margin-left: 20px;
-    margin-top: 10px;
     text-align: center;
     letter-spacing: 1rem;
-    animation: moveTitleTextMobile 2s;
+    animation: moveTitle420 1.5s;
   }
 
   .title-textShow {
-    width: 60%;
-    margin-left: 60px;
-    margin-top: 10px;
     font-size: 2rem;
     text-align: center;
     letter-spacing: 1rem;
   }
+
+  .innerButtonContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    transform: translate(-50%, -50%);
+    height: 50vh;
+    width: 50vw;
+  }
+
+  .innerButtonContainerShow {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    transform: translate(-50%, -50%);
+    height: 50vh;
+    width: 50vw;
+  }
+
+  .about,
+  .recipes,
+
+  .gallery {
+    @include innerButtonMobile420;
+
+  }
+  .recipes {
+    margin: 0;
+  }
 }
+
+@media screen and (max-width: 320px) {
+  
+  }
