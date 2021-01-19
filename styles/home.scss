@@ -36,6 +36,7 @@ body {
 
 $innerColor: #dc1e1e;
 
+
 @mixin innerButton {
   @include flex-center;
   width: 18vw;
@@ -46,7 +47,9 @@ $innerColor: #dc1e1e;
   color: white;
   background: rgba(255, 255, 255, 0.2);
   letter-spacing: 10px;
+
   font-size: 1.75rem;
+
   button-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.808);
 }
 
@@ -55,6 +58,7 @@ $innerColor: #dc1e1e;
   color: $innerColor;
   transition: 1s;
 }
+
 
 .innerButtonContainer {
   display: flex;
@@ -80,21 +84,27 @@ $innerColor: #dc1e1e;
 }
 
 .about {
+
+
   @include innerButton;
   &:hover {
     @include innerButtonHover;
   }
 }
 
+
 .recipes {
   @include innerButton;
   margin-top: 50%;
+
   &:hover {
     @include innerButtonHover;
   }
 }
 
 .gallery {
+
+
   @include innerButton;
   &:hover {
     @include innerButtonHover;
@@ -216,16 +226,20 @@ $innerColor: #dc1e1e;
     width: 80%;
   }
 
+
+
   .title-text{
     animation: moveTitle740 1.5s;
   }
 
   .about,
   .recipes,
+
   .gallery {
     font-size: 1rem;
     height: 15vh;
     letter-spacing: 6px;
+
   }
 
   .innerButtonContainer,
@@ -252,9 +266,11 @@ $innerColor: #dc1e1e;
       transform: translate(-50%, -20%);
     }
 
+
     to {
       transform: translate(-50%, 85%);
     }
+
   }
 
   .title-text, .title-textShow{
@@ -294,8 +310,10 @@ $innerColor: #dc1e1e;
 
   .about,
   .recipes,
+
   .gallery {
     @include innerButtonMobile420;
+
   }
   .recipes {
     margin: 0;

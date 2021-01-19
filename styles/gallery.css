@@ -331,8 +331,10 @@ body {
   .up-button {
     left: 80%;
   }
+
   .image-box img {
     cursor: default;
+
   }
   .gallery-title {
     font-size: 1rem;
@@ -353,6 +355,7 @@ body {
     -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);
     grid-auto-rows: 16rem;
+
   }
   .gallery-title {
     font-size: 0.8rem;
