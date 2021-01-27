@@ -9,7 +9,7 @@ const clickInfo = document.querySelector(".click-info");
 
 const allWrapper = document.querySelector(".grid-wrapper");
 
-class Article {
+class Recipe {
   constructor(title, content, image){
     this._title = title;
     this._content = content;
@@ -20,20 +20,50 @@ class Article {
     return this._title;
   }
 
-  set title(newTitle){
-     this._title = newTitle;
-   }
+  get content() {
+    return this._content;
+  }
+
+  get image() {
+    return this._image;
+  }
+
   }
 
 
-const teriyaki = new Article("Teriyaki Soba", "some content", "../img/blackpot.jpg");
+const croque = new Recipe(
+  `<h1>Croque<br /> Madame</h1>`, 
+`<ul class="ingredients">
+<li>one bun</li>
+<li>3 table spoons of bechamel sauce</li>
+<li>1 slice of ham</li>
+<li>2 slices of cheese</li>
+<li>2 table spoons of clarified butter for frying</li>
+<li>one poached egg</li>
+<li>some chives for decoration</li>
+</ul>
+<ol>
+<li>
+Cut the bun in half and brush with béchamel sauce the inner sides.
+</li>
+<li>
+  Put the slices in order cheese, ham, cheese on the bun and fold it.
+</li>
+<li>
+  It takes about 4 to 5 minutes to boil poached egg. You put poached egg on fried bun for the grand finale.
+</li>
+<li>
+  Melt butter on frying pan and fry the bun for about 3 minutes on each side on medium heat.
+  Try to press down the bun with something heavy while frying – i.e. pot on the plate.
+</li>
+<li>
+  Put the poached egg on the fried bun and sprinkle with some chopped chives.
+</li>
+</ol>`, `<div class="img-box"><img src="../img/croque.png"></div>`);
 
-console.log(teriyaki.title)
-
-
-teriyaki.title = "Chicken";
-
-console.log(teriyaki.title)
+console.log(croque.content);
+console.log(croque.title);
+console.log(croque.image);
 
 /*   const article = {
   title: "pierwszy artykuł",
@@ -71,6 +101,7 @@ const addPad2 = () => {
   let showRecipeAdd = document.createElement("div");
   showRecipeAdd.classList.add("showRecipe");
   allWrapper.appendChild(showRecipeAdd);
+  showRecipeAdd.innerHTML = ` ${croque.title} ${croque.image} ${croque.content}`
 };
 
 const switchItem = () => {
