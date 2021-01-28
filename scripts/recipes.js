@@ -61,6 +61,45 @@ Cut the bun in half and brush with béchamel sauce the inner sides.
 </li>
 </ol>`, `<div class="img-box"><img src="../img/croque.png"></div>`);
 
+const teriyakiSoba = new Recipe(
+  `Teriyaki Soba`,
+  `<ul class="ingredients">
+  <li>
+    150g of dried Soda Noodles
+  </li>
+  <li>
+    1/4 cabbage head
+  </li>
+  <li>
+    1 carrot
+  </li>
+  <li>
+    1 green bell pepper
+  </li>
+  <li>
+    150 ml of teriyaki sauce
+  </li>
+  <li>
+    150 ml of water
+  </li>
+  <li>
+    3 shallots
+  </li>
+  <li>
+    75 ml of light soy sauce
+  </li>
+  <li>
+    300g of chicken breast (we need 2 pieces for 2 plates)
+  </li>
+  <li>
+    Olive oil for frying, pepper to taste.
+  </li>
+
+  </ul>`,
+  `<div class="img-box"><img src="../img/teriyakiSoba.png"></div>`
+
+)
+
 console.log(croque.content);
 console.log(croque.title);
 console.log(croque.image);
