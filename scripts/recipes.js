@@ -1,4 +1,3 @@
-
 const item1 = document.querySelector(".item1");
 const item2 = document.querySelector(".item2");
 const item3 = document.querySelector(".item3");
@@ -10,7 +9,7 @@ const clickInfo = document.querySelector(".click-info");
 const allWrapper = document.querySelector(".grid-wrapper");
 
 class Recipe {
-  constructor(title, content, image){
+  constructor(title, content, image) {
     this._title = title;
     this._content = content;
     this._image = image;
@@ -27,13 +26,11 @@ class Recipe {
   get image() {
     return this._image;
   }
-
-  }
-
+}
 
 const croque = new Recipe(
-  `<h1>Croque<br /> Madame</h1>`, 
-`<ul class="ingredients">
+  `<h1>Croque<br /> Madame</h1>`,
+  `<ul class="ingredients">
 <li>one bun</li>
 <li>3 table spoons of bechamel sauce</li>
 <li>1 slice of ham</li>
@@ -59,10 +56,14 @@ Cut the bun in half and brush with béchamel sauce the inner sides.
 <li>
   Put the poached egg on the fried bun and sprinkle with some chopped chives.
 </li>
-</ol>`, `<div class="img-box"><img src="../img/croque.png"></div>`);
+</ol>`,
+  `<div class="img-box"><img src="../img/croque.png"></div>`
+);
 
 const teriyakiSoba = new Recipe(
-  `Teriyaki Soba`,
+  `<h1>
+    Teriyaki Soba
+  </h1>`,
   `<ul class="ingredients">
   <li>
     150g of dried Soda Noodles
@@ -97,8 +98,7 @@ const teriyakiSoba = new Recipe(
 
   </ul>`,
   `<div class="img-box"><img src="../img/teriyakiSoba.png"></div>`
-
-)
+);
 
 console.log(croque.content);
 console.log(croque.title);
@@ -113,15 +113,12 @@ console.log(croque.image);
 console.log(article);
  */
 
-
-
 /* const removePad = () =>{
   let showRecipe = document.querySelector('.showRecipe');
   allWrapper.removeChild(showRecipe);
 } */
 
 const backButton = `<div class="button-box"><a href="./home.html"><div class="back-button"></div></a></div>`;
-
 
 const removePad = () => {
   allWrapper.removeChild(allWrapper.lastChild);
@@ -131,16 +128,14 @@ const addPad1 = () => {
   let showRecipeAdd = document.createElement("div");
   showRecipeAdd.classList.add("showRecipe");
   allWrapper.appendChild(showRecipeAdd);
-  showRecipeAdd.innerHTML = 
-  `<p>Teriyaki Soba</p><div class="img-box"><img src="./img/teriyakiSoba.png" alt="TeriyakiSoba"></div>
-  ${backButton}`;
+  showRecipeAdd.innerHTML = `${teriyakiSoba.title} ${teriyakiSoba.image} ${teriyakiSoba.content}`;
 };
 
 const addPad2 = () => {
   let showRecipeAdd = document.createElement("div");
   showRecipeAdd.classList.add("showRecipe");
   allWrapper.appendChild(showRecipeAdd);
-  showRecipeAdd.innerHTML = ` ${croque.title} ${croque.image} ${croque.content}`
+  showRecipeAdd.innerHTML = ` ${croque.title} ${croque.image} ${croque.content}`;
 };
 
 const switchItem = () => {
@@ -150,9 +145,7 @@ const switchItem = () => {
   });
 
   item2.addEventListener("click", () => {
-      removePad();
-      addPad2();
+    removePad();
+    addPad2();
   });
 };
-
-
