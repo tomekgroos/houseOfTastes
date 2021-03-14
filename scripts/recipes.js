@@ -62,7 +62,7 @@ Cut the bun in half and brush with béchamel sauce the inner sides.
 
 const teriyakiSoba = new Recipe(
   `<h1>
-    Teriyaki Soba
+    Teriyaki<br /> Soba
   </h1>`,
   `<ul class="ingredients">
   <li>
@@ -100,9 +100,7 @@ const teriyakiSoba = new Recipe(
   `<div class="img-box"><img src="../img/teriyakiSoba.png"></div>`
 );
 
-console.log(croque.content);
-console.log(croque.title);
-console.log(croque.image);
+
 
 /*   const article = {
   title: "pierwszy artykuł",
@@ -118,6 +116,14 @@ console.log(article);
   allWrapper.removeChild(showRecipe);
 } */
 
+// move to recipe function 
+const moveToRecipe = () => {
+  document.addEventListener("click", () => {
+    window.location.href = "#show";
+  })
+  
+}
+
 const backButton = `<div class="button-box"><a href="./home.html"><div class="back-button"></div></a></div>`;
 
 const removePad = () => {
@@ -127,6 +133,8 @@ const removePad = () => {
 const addPad1 = () => {
   let showRecipeAdd = document.createElement("div");
   showRecipeAdd.classList.add("showRecipe");
+  showRecipeAdd.setAttribute("id", "show");
+  moveToRecipe();
   allWrapper.appendChild(showRecipeAdd);
   showRecipeAdd.innerHTML = `${teriyakiSoba.title} ${teriyakiSoba.image} ${teriyakiSoba.content}`;
 };
@@ -134,6 +142,8 @@ const addPad1 = () => {
 const addPad2 = () => {
   let showRecipeAdd = document.createElement("div");
   showRecipeAdd.classList.add("showRecipe");
+  showRecipeAdd.setAttribute("id", "show");
+  moveToRecipe();
   allWrapper.appendChild(showRecipeAdd);
   showRecipeAdd.innerHTML = ` ${croque.title} ${croque.image} ${croque.content}`;
 };
