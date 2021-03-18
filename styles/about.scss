@@ -39,7 +39,7 @@ $innerColor: #dc1e1e;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 20%;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  animation: about-box-animation 2s;
+  animation: about-box-animation 1s;
 }
 
 @keyframes about-box-animation {
